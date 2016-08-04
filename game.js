@@ -1,5 +1,7 @@
-var black = "<div id=%name% style='disply:block; height: 64px; width: 80px; background: black; float:left'></div>"
-var white = "<div id=%name% style='disply:block; height: 64px; width: 80px; background: white; float:left'></div>"
+var black = "<div id=%name% style='display:block; height: 64px; width: 80px; background: black; float:left'></div>"
+var white = "<div id=%name% style='display:block; height: 64px; width: 80px; background: #8B4513; float:left'></div>"
+var block = "<div style='display:block;  width: 80px; background: white; float:left'>%num%</div>"
+var block1 = "<br><div style='display:block;  width: 80px; background: white;'>%num%</div>"
 
 var func = function(){
 	var a = ["A","B",'C','D','E','F','G','H']
@@ -13,7 +15,6 @@ var func = function(){
 	return c;
 };
 
-console.log(func())
 var squares = function(){
 	var name = func();
 	var n = 0;
@@ -34,3 +35,20 @@ var squares = function(){
 };
 
 squares()
+
+var nums = function(){
+	for (var i = 1;i<9;i++){
+		$("#col").append(block.replace("%num%",i))
+	}
+};
+
+nums()
+
+var lets = function(){
+	var a = ["A",'B','C','D','E','F','G','H']
+	for (var i = 0;i<8;i++){
+		$("#row").append(block1.replace("%num%",a[i]))
+	}
+};
+
+lets()
