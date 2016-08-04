@@ -13,7 +13,7 @@ var func = function(){
 	return c;
 };
 
-
+console.log(func())
 var squares = function(){
 	var name = func();
 	var n = 0;
@@ -25,10 +25,10 @@ var squares = function(){
 			n++
 		}
 		for (var e = 0; e<4;e++){
-			n++
 			$("#main").append(black.replace('%name%',name[n]))
 			n++
 			$("#main").append(white.replace('%name%',name[n]))
+			n++
 		}
 	}
 };
