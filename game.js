@@ -52,15 +52,46 @@ var lets = function(){
 };
 
 lets();
+var availableTokens = ["A2", "A4", "A6", "A8","B1", "B3", "B5", "B7", "C2", "C4", "C6", "C8","D1", "D3", "D5", "D7", "E2", "E4", "E6", "E8","F1", "F3", "F5", "F7", "G2", "G4", "G6", "G8", "H1", "H3", "H5", "H7"]
 
-var Car = function(obj, loc){
-	var obj = {loc:loc};
-	obj.move = function(){
-		obj.loc++
+
+function Player(player) {
+    player = new Image();
+    player.src = 'images/coin.png';
+    return player;
+};
+
+function Player1(player) {
+    player = new Image();
+    player.src = 'images/coin2.png';
+    return player;
+};
+
+var start = function(){
+	for (var i=0;i<12;i++){
+		var token = new Player();
+		$("#"+availableTokens[i]).append(token)
 	}
-	return obj;
-}
-var amy = Car({},1)
-amy.move();
-var ben = Car({},9);
-ben.move();
+	for (var e=20;e<32;e++){
+		var token = new Player1();
+		$("#"+availableTokens[e]).append(token)
+	}
+};
+
+
+
+
+//var Car = function(loc){
+//	var obj = Object.create(Car.prototype);
+//	this.loc = loc;
+//	return obj;
+//};
+//Car.prototype.move = function(){
+//		this.loc++;
+//}
+//console.log(Car.prototype.constructor)
+//var amy = Car(1)
+//amy.move();
+//var ben = new Car(9);
+//ben.move();
+//console.log(ben.loc)
