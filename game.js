@@ -126,37 +126,58 @@ $("button").click(function() {
                 var oID = $(this).attr("id");
                 });
 var show = function(a){
+	var token1 = new Player();
+	var token2 = new Player1();
 	if ($('#'+a[0]).find('img').length > 0){
 		if ($('#'+a[0]).find('#coin').length > 0){
 			if ($("#"+a[1]).find('img').length === 0){
 				$("#"+a[1]).fadeOut(800).fadeIn(200);
+				$("#"+a[1]).click(function(){
+					$('#'+a[0]).empty();
+					$("#"+a[1]).append(token1)
+					$("#"+a[2]).unbind('click')
+					$("#"+a[0]).unbind('click')
+				})
 			}
 			if ($("#"+a[2]).find('img').length === 0){
 				$("#"+a[2]).fadeOut(800).fadeIn(200);
+				$("#"+a[2]).click(function(){
+					$('#'+a[0]).empty();
+					$("#"+a[2]).append(token1)
+					$("#"+a[1]).unbind('click')
+					$("#"+a[0]).unbind('click')
+				})
 			}
 		}else{
 			if ($("#"+a[a.length-1]).find('img').length === 0){
 				$("#"+a[a.length-1]).fadeOut(800).fadeIn(200);
+				$("#"+a[a.length-1]).click(function(){
+					$('#'+a[0]).empty();
+					$("#"+a[a.length-1]).append(token2)
+					$("#"+a[a.length-2]).unbind('click')
+					$("#"+a[0]).unbind('click')
+				})
 			}
 			if ($("#"+a[a.length-2]).find('img').length === 0){
 				$("#"+a[a.length-2]).fadeOut(800).fadeIn(200);
+				$("#"+a[a.length-2]).click(function(){
+					$('#'+a[0]).empty();
+					$("#"+a[a.length-2]).append(token2)
+					$("#"+a[a.length-1]).unbind('click')
+					$("#"+a[0]).unbind('click')
+				})
 			}
 		}
 	}
 }
-
-
-//var Car = function(loc){
-//	var obj = Object.create(Car.prototype);
-//	this.loc = loc;
-//	return obj;
-//};
-//Car.prototype.move = function(){
-//		this.loc++;
-//}
-//console.log(Car.prototype.constructor)
-//var amy = Car(1)
-//amy.move();
-//var ben = new Car(9);
-//ben.move();
-//console.log(ben.loc)
+var blue = 'coin1',yellow = 'coin'
+var tokensPos = function(item){
+	var names = func();
+	var result = [];
+	for (e in names){
+		if ($('#'+names[e]).find('#'+item).length > 0){
+			result.push(names[e])
+		}
+	}
+	return result
+}
