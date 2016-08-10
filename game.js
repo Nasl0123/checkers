@@ -1,6 +1,6 @@
 var black = "<button id=%name% "
 var black1 = "onclick='show(%id%)' style='display:block; height: 64px; width: 80px; background: black; float:left'></button>"
-var white = "<button id=%name% style='display:block; height: 64px; width: 80px; background: #8B4513; float:left'></button>";
+var white = "<button id=%name% style='display:block; height: 64px; width: 80px; background: red; float:left'></button>";
 var block = "<div style='display:block;  width: 80px; background: white; float:left'>%num%</div>";
 var block1 = "<br><div style='display:block;  width: 80px; background: white;'>%num%</div>";
 var reset = "<button id='start' onclick='start();change1();' style='margin-left:590; height:40; color:green;'>Reset</button>"
@@ -98,6 +98,7 @@ var start = function(){
 			$("#"+availableTokens[e]).append(token)
 		}
 	}
+	o = 0
 };
 
 var tokenIn = function(a){
@@ -126,6 +127,7 @@ $("button").click(function() {
                 var oID = $(this).attr("id");
                 });
 o = 0
+r = []
 var show = function(a){
 	var token1 = new Player();
 	var token2 = new Player1();
@@ -141,6 +143,10 @@ var show = function(a){
 							$('#'+a[0]).empty();}
 						$("#"+a[2]).unbind('click')
 						$("#"+a[0]).unbind('click')
+						for (var e in r){
+							r[e].unbind('click')
+						}
+						r = []
 						o++
 					})
 				}
@@ -153,6 +159,10 @@ var show = function(a){
 							$('#'+a[0]).empty()}
 						$("#"+a[1]).unbind('click')
 						$("#"+a[0]).unbind('click')
+						for (var e in r){
+							r[e].unbind('click')
+						}
+						r = []
 						o++
 					})
 				}
@@ -168,6 +178,10 @@ var show = function(a){
 							$('#'+a[0]).empty();}
 						$("#"+a[a.length-2]).unbind('click')
 						$("#"+a[0]).unbind('click')
+						for (var e in r){
+							r[e].unbind('click')
+						}
+						r = []
 						o = 0
 					})
 				}
@@ -180,12 +194,20 @@ var show = function(a){
 							$('#'+a[0]).empty();}
 						$("#"+a[a.length-1]).unbind('click')
 						$("#"+a[0]).unbind('click')
+						for (var e in r){
+							r[e].unbind('click')
+						}
+						r = []
 						o = 0
 					})
 				}
 			}
 		}
 	}
+	r.push($("#"+a[1]))
+	r.push($("#"+a[2]))
+	r.push($("#"+a[a.length-2]))
+	r.push($("#"+a[a.length-1]))
 }
 var blue = 'coin1',yellow = 'coin'
 var tokensPos = function(item){
