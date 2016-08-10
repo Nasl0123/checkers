@@ -125,55 +125,64 @@ var change1 = function(){
 $("button").click(function() {
                 var oID = $(this).attr("id");
                 });
+o = 0
 var show = function(a){
 	var token1 = new Player();
 	var token2 = new Player1();
 	if ($('#'+a[0]).find('img').length > 0){
 		if ($('#'+a[0]).find('#coin').length > 0){
-			if ($("#"+a[1]).find('#coin').length === 0){
-				$("#"+a[1]).fadeOut(800).fadeIn(200);
-				$("#"+a[1]).unbind('click')
-				$("#"+a[1]).click(function(){
-					if ($("#"+a[1]).find('img').length === 0){
-						$("#"+a[1]).append(token1)
-						$('#'+a[0]).empty();}
-					$("#"+a[2]).unbind('click')
-					$("#"+a[0]).unbind('click')
-				})
-			}
-			if ($("#"+a[2]).find('#coin').length === 0){
-				$("#"+a[2]).fadeOut(800).fadeIn(200);
-				$("#"+a[2]).unbind('click')
-				$("#"+a[2]).click(function(){
-					if ($("#"+a[2]).find('img').length === 0){
-						$("#"+a[2]).append(token1)
-						$('#'+a[0]).empty()}
+			if (o === 0){
+				if ($("#"+a[1]).find('#coin').length === 0){
+					$("#"+a[1]).fadeOut(800).fadeIn(200);
 					$("#"+a[1]).unbind('click')
-					$("#"+a[0]).unbind('click')
-				})
+					$("#"+a[1]).click(function(){
+						if ($("#"+a[1]).find('img').length === 0){
+							$("#"+a[1]).append(token1)
+							$('#'+a[0]).empty();}
+						$("#"+a[2]).unbind('click')
+						$("#"+a[0]).unbind('click')
+						o++
+					})
+				}
+				if ($("#"+a[2]).find('#coin').length === 0){
+					$("#"+a[2]).fadeOut(800).fadeIn(200);
+					$("#"+a[2]).unbind('click')
+					$("#"+a[2]).click(function(){
+						if ($("#"+a[2]).find('img').length === 0){
+							$("#"+a[2]).append(token1)
+							$('#'+a[0]).empty()}
+						$("#"+a[1]).unbind('click')
+						$("#"+a[0]).unbind('click')
+						o++
+					})
+				}
 			}
 		}else{
-			if ($("#"+a[a.length-1]).find('#coin1').length === 0){
-				$("#"+a[a.length-1]).fadeOut(800).fadeIn(200);
-				$("#"+a[a.length-1]).unbind('click')
-				$("#"+a[a.length-1]).click(function(){
-					if ($("#"+a[a.length-1]).find('img').length === 0){
-						$("#"+a[a.length-1]).append(token2)
-						$('#'+a[0]).empty();}
-					$("#"+a[a.length-2]).unbind('click')
-					$("#"+a[0]).unbind('click')
-				})
-			}
-			if ($("#"+a[a.length-2]).find('#coin1').length === 0){
-				$("#"+a[a.length-2]).fadeOut(800).fadeIn(200);
-				$("#"+a[a.length-2]).unbind('click')
-				$("#"+a[a.length-2]).click(function(){
-					if ($("#"+a[a.length-2]).find('img').length === 0){
-						$("#"+a[a.length-2]).append(token2)
-						$('#'+a[0]).empty();}
+			if (o > 0){
+				if ($("#"+a[a.length-1]).find('#coin1').length === 0){
+					$("#"+a[a.length-1]).fadeOut(800).fadeIn(200);
 					$("#"+a[a.length-1]).unbind('click')
-					$("#"+a[0]).unbind('click')
-				})
+					$("#"+a[a.length-1]).click(function(){
+						if ($("#"+a[a.length-1]).find('img').length === 0){
+							$("#"+a[a.length-1]).append(token2)
+							$('#'+a[0]).empty();}
+						$("#"+a[a.length-2]).unbind('click')
+						$("#"+a[0]).unbind('click')
+						o = 0
+					})
+				}
+				if ($("#"+a[a.length-2]).find('#coin1').length === 0){
+					$("#"+a[a.length-2]).fadeOut(800).fadeIn(200);
+					$("#"+a[a.length-2]).unbind('click')
+					$("#"+a[a.length-2]).click(function(){
+						if ($("#"+a[a.length-2]).find('img').length === 0){
+							$("#"+a[a.length-2]).append(token2)
+							$('#'+a[0]).empty();}
+						$("#"+a[a.length-1]).unbind('click')
+						$("#"+a[0]).unbind('click')
+						o = 0
+					})
+				}
 			}
 		}
 	}
