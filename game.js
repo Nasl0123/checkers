@@ -69,7 +69,7 @@ var lets = function(){
 lets();
 var availableTokens = ["A2", "A4", "A6", "A8","B1", "B3", "B5", "B7", "C2", "C4", "C6", "C8","D1", "D3", "D5", "D7", "E2", "E4", "E6", "E8","F1", "F3", "F5", "F7", "G2", "G4", "G6", "G8", "H1", "H3", "H5", "H7"]
 var a2=['A2','B1','B3','a','a'],a4=['A4','B3','B5','a','a'],a6=['A6','B5','B7','a','a'],a8=['A8','B7'],b1=['B1','C2','a','a','A2'],b3=['B3','C2','C4','A2','A4'],b5=['B5','C4','C6','A4','A6'],b7=['B7','C6','C8','A6','A8'],c2=['C2','D1','D3','B1','B3'],c4=['C4','D3','D5','B3','B5'],c6=['C6','D5','D7','B5','B7'],c8=['C8','D7','a','a','B7']
-var d1=['D1','E2','a','a','C2'],d3=['D3','E2','E4','C2','C4'],d5=['D5','E4','E6','C4','C6'],d7=['D7','E6','E8','C6','C8'],e2=['E2','F1','F3','D1','D3'],e4=['E4','F3','F5','D3','D5'],e6=['E6','F5','F7','D5','D7'],e8=['E8','F7','a','a','D7']
+var d1=['D1','E2','a','a','C2'],d3=['D3','E2','E4','C2','C4'],d5=['D5','E4','E6','C4','C6'],d7=['D7','E6','E8','C6','C8'],e2=['E2','F1','F3','D1','D3'],e4=['E4','F3','F5','D3','D5'],e6=['E6','F5','F7',d5,'D5','D7'],e8=['E8','F7','a','a','D7']
 var f1=['F1','G2','a','a','E2'],f3=['F3','G2','G4','E2','E4'],f5=['F5','G4','G6','E4','E6'],f7=['F7','G6','G8','E6','E8'],g2=['G2','H1','H3','F1','F3'],g4=['G4','H3','H5','F3','F5'],g6=['G6','H5','H7','F5','F7'],g8=['G8','H7','a','a','F7'],h1=['H1','a','a','a','G2'],h3=['H3','a','a','G2','G4'],h5=['H5','a','a','G4','G6'],h7=['H7','a','a','G6','G8']
 function Player(player) {
     player = new Image();
@@ -78,7 +78,15 @@ function Player(player) {
     player.id = 'coin'
     return player;
 };
-
+function trans(a){
+	var name = [a2,a4,a6,a8,b1,b3,b5,b7,c2,c4,c6,c8,d1,d3,d5,d7,e2,e4,e6,e8,f1,f3,f5,f7,g2,g4,g6,g8,h1,h3,h5,h7]
+	for (var e in name){
+		if (a === name[e][0]){
+			a = name[e]
+		}
+	}
+	return a
+}
 function Player1(player) {
     player = new Image();
     player.src = 'images/coin2.png';
@@ -135,71 +143,155 @@ var show = function(a){
 		if ($('#'+a[0]).find('#coin').length > 0){
 			if (o === 0){
 				if ($("#"+a[1]).find('#coin').length === 0){
-					$("#"+a[1]).fadeOut(800).fadeIn(200);
-					$("#"+a[1]).unbind('click')
-					$("#"+a[1]).click(function(){
-						if ($("#"+a[1]).find('img').length === 0){
-							$("#"+a[1]).append(token1)
-							$('#'+a[0]).empty();}
-						$("#"+a[2]).unbind('click')
-						$("#"+a[0]).unbind('click')
-						for (var e in r){
-							r[e].unbind('click')
+					if ($("#"+a[1]).find('#coin1').length === 1){
+						var cam = trans(a[1])
+						if ($("#"+cam[1]).find('img').length ===0){
+							$("#"+cam[1]).fadeOut(800).fadeIn(200);
+							$("#"+cam[1]).unbind('click')
+							$("#"+cam[1]).click(function(){
+								if ($("#"+cam[1]).find('img').length === 0){
+									$("#"+cam[1]).append(token1)
+									$('#'+cam[0]).empty();
+									$('#'+a[0]).empty()}
+								$("#"+cam[2]).unbind('click')
+								$("#"+cam[0]).unbind('click')
+								for (var e in r){
+									r[e].unbind('click')
+								}
+								r = []
+								o++
+							})
 						}
-						r = []
-						o++
-					})
+					}else{
+						$("#"+a[1]).fadeOut(800).fadeIn(200);
+						$("#"+a[1]).unbind('click')
+						$("#"+a[1]).click(function(){
+							if ($("#"+a[1]).find('img').length === 0){
+								$("#"+a[1]).append(token1)
+								$('#'+a[0]).empty();}
+							$("#"+a[2]).unbind('click')
+							$("#"+a[0]).unbind('click')
+							for (var e in r){
+								r[e].unbind('click')
+							}
+							r = []
+							o++
+						})
+					}
 				}
 				if ($("#"+a[2]).find('#coin').length === 0){
-					$("#"+a[2]).fadeOut(800).fadeIn(200);
-					$("#"+a[2]).unbind('click')
-					$("#"+a[2]).click(function(){
-						if ($("#"+a[2]).find('img').length === 0){
-							$("#"+a[2]).append(token1)
-							$('#'+a[0]).empty()}
-						$("#"+a[1]).unbind('click')
-						$("#"+a[0]).unbind('click')
-						for (var e in r){
-							r[e].unbind('click')
+					if ($("#"+a[2]).find('#coin1').length === 1){
+						var cami = trans(a[2])
+						if ($("#"+cami[2]).find('img').length ===0){
+							$("#"+cami[2]).fadeOut(800).fadeIn(200);
+							$("#"+cami[2]).unbind('click')
+							$("#"+cami[2]).click(function(){
+								if ($("#"+cami[2]).find('img').length === 0){
+									$("#"+cami[2]).append(token1)
+									$('#'+cami[0]).empty();
+									$('#'+a[0]).empty()}
+								$("#"+cami[1]).unbind('click')
+								$("#"+cami[0]).unbind('click')
+								for (var e in r){
+									r[e].unbind('click')
+								}
+								r = []
+								o++
+							})
 						}
-						r = []
-						o++
-					})
+					}else{
+						$("#"+a[2]).fadeOut(800).fadeIn(200);
+						$("#"+a[2]).unbind('click')
+						$("#"+a[2]).click(function(){
+							if ($("#"+a[2]).find('img').length === 0){
+								$("#"+a[2]).append(token1)
+								$('#'+a[0]).empty()}
+							$("#"+a[1]).unbind('click')
+							$("#"+a[0]).unbind('click')
+							for (var e in r){
+								r[e].unbind('click')
+							}
+							r = []
+							o++
+						})
+					}
 				}
 			}
 		}else{
 			if (o > 0){
 				if ($("#"+a[a.length-1]).find('#coin1').length === 0){
-					$("#"+a[a.length-1]).fadeOut(800).fadeIn(200);
-					$("#"+a[a.length-1]).unbind('click')
-					$("#"+a[a.length-1]).click(function(){
-						if ($("#"+a[a.length-1]).find('img').length === 0){
-							$("#"+a[a.length-1]).append(token2)
-							$('#'+a[0]).empty();}
-						$("#"+a[a.length-2]).unbind('click')
-						$("#"+a[0]).unbind('click')
-						for (var e in r){
-							r[e].unbind('click')
+					if ($("#"+a[a.length-1]).find('#coin').length === 1){
+						var camo = trans(a[a.length-1])
+						if ($("#"+camo[camo.length-1]).find('img').length ===0){
+							$("#"+camo[camo.length-1]).fadeOut(800).fadeIn(200);
+							$("#"+camo[camo.length-1]).unbind('click')
+							$("#"+camo[camo.length-1]).click(function(){
+								if ($("#"+camo[camo.length-1]).find('img').length === 0){
+									$("#"+camo[camo.length-1]).append(token2)
+									$('#'+camo[0]).empty();
+									$('#'+a[0]).empty()}
+								$("#"+camo[camo.length-2]).unbind('click')
+								$("#"+camo[0]).unbind('click')
+								for (var e in r){
+									r[e].unbind('click')
+								}
+								r = []
+								o = 0
+							})
 						}
-						r = []
-						o = 0
-					})
+					}else{
+						$("#"+a[a.length-1]).fadeOut(800).fadeIn(200);
+						$("#"+a[a.length-1]).unbind('click')
+						$("#"+a[a.length-1]).click(function(){
+							if ($("#"+a[a.length-1]).find('img').length === 0){
+								$("#"+a[a.length-1]).append(token2)
+								$('#'+a[0]).empty();}
+							$("#"+a[a.length-2]).unbind('click')
+							$("#"+a[0]).unbind('click')
+							for (var e in r){
+								r[e].unbind('click')
+							}
+							r = []
+							o = 0
+						})
+					}
 				}
 				if ($("#"+a[a.length-2]).find('#coin1').length === 0){
-					$("#"+a[a.length-2]).fadeOut(800).fadeIn(200);
-					$("#"+a[a.length-2]).unbind('click')
-					$("#"+a[a.length-2]).click(function(){
-						if ($("#"+a[a.length-2]).find('img').length === 0){
-							$("#"+a[a.length-2]).append(token2)
-							$('#'+a[0]).empty();}
-						$("#"+a[a.length-1]).unbind('click')
-						$("#"+a[0]).unbind('click')
-						for (var e in r){
-							r[e].unbind('click')
+					if ($("#"+a[a.length-2]).find('#coin').length === 1){
+						var camu = trans(a[a.length-2])
+						if ($("#"+camu[camu.length-2]).find('img').length ===0){
+							$("#"+camu[camu.length-2]).fadeOut(800).fadeIn(200);
+							$("#"+camu[camu.length-2]).unbind('click')
+							$("#"+camu[camu.length-2]).click(function(){
+								if ($("#"+camu[camu.length-2]).find('img').length === 0){
+									$("#"+camu[camu.length-2]).append(token2)
+									$('#'+camu[0]).empty();
+									$('#'+a[0]).empty()}
+								$("#"+camu[camu.length-1]).unbind('click')
+								$("#"+camu[0]).unbind('click')
+								for (var e in r){
+									r[e].unbind('click')
+								}
+								r = []
+								o = 0
+							})
 						}
-						r = []
-						o = 0
-					})
+					}else{
+						$("#"+a[a.length-2]).fadeOut(800).fadeIn(200);
+						$("#"+a[a.length-2]).unbind('click')
+						$("#"+a[a.length-2]).click(function(){
+							if ($("#"+a[a.length-2]).find('img').length === 0){
+								$("#"+a[a.length-2]).append(token2)
+								$('#'+a[0]).empty();}
+							$("#"+a[a.length-1]).unbind('click')
+							$("#"+a[0]).unbind('click')
+							for (var e in r){
+								r[e].unbind('click')
+							}
+							r = []
+							o = 0
+						})
+					}
 				}
 			}
 		}
