@@ -167,87 +167,99 @@ var show = function(a){
 		if ($('#'+a[0]).find('#coin').length > 0){
 			if (o === 0){
 				if ($("#"+a[1]).find('#coin').length === 0){
-					if ($("#"+a[1]).find('#coin1').length === 1||$("#"+a[1]).find('#coin4').length === 1){
-						var cam = trans(a[1])
-						if ($("#"+cam[1]).find('img').length ===0){
-							$("#"+cam[1]).fadeOut(200).fadeIn(200);
-							$("#"+cam[1]).unbind('click')
-							$("#"+cam[1]).click(function(){
-								if ($("#"+cam[1]).find('img').length === 0){
-									$("#"+cam[1]).append(token1)
-									$('#'+cam[0]).empty();
-									$('#'+a[0]).empty()}
-								$("#"+cam[2]).unbind('click')
-								$("#"+cam[0]).unbind('click')
+					if ($("#"+a[1]).find('#coin3').length === 0){
+						if ($("#"+a[1]).find('#coin1').length === 1||$("#"+a[1]).find('#coin4').length === 1){
+							var cam = trans(a[1])
+							if ($("#"+cam[1]).find('img').length ===0){
+								$("#"+cam[1]).fadeOut(200).fadeIn(200);
+								$("#"+cam[1]).unbind('click')
+								$("#"+cam[1]).click(function(){
+									if ($("#"+cam[1]).find('img').length === 0){
+										$("#"+cam[1]).append(token1)
+										$('#'+cam[0]).empty();
+										$('#'+a[0]).empty()}
+									$("#"+cam[2]).unbind('click')
+									$("#"+cam[0]).unbind('click')
+									for (var e in r){
+										r[e].unbind('click')
+									}
+									verify()
+									r = []
+									if (o === 0){
+										o=1
+									}
+									if (tokensPos(blue).length === 0){
+										console.log('Yellow wins!!!')
+									}
+								})
+							}
+						}else{
+							$("#"+a[1]).fadeOut(200).fadeIn(200);
+							$("#"+a[1]).unbind('click')
+							$("#"+a[1]).click(function(){
+								if ($("#"+a[1]).find('img').length === 0){
+									$("#"+a[1]).append(token1)
+									$('#'+a[0]).empty();}
+								$("#"+a[2]).unbind('click')
+								$("#"+a[0]).unbind('click')
 								for (var e in r){
 									r[e].unbind('click')
 								}
 								verify()
 								r = []
-								o++
-								if (tokensPos(blue).length === 0){
-									console.log('Yellow wins!!!')
+								if (o === 0){
+									o=1
 								}
 							})
 						}
-					}else{
-						$("#"+a[1]).fadeOut(200).fadeIn(200);
-						$("#"+a[1]).unbind('click')
-						$("#"+a[1]).click(function(){
-							if ($("#"+a[1]).find('img').length === 0){
-								$("#"+a[1]).append(token1)
-								$('#'+a[0]).empty();}
-							$("#"+a[2]).unbind('click')
-							$("#"+a[0]).unbind('click')
-							for (var e in r){
-								r[e].unbind('click')
-							}
-							verify()
-							r = []
-							o++
-						})
 					}
 				}
 				if ($("#"+a[2]).find('#coin').length === 0){
-					if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
-						var cami = trans(a[2])
-						if ($("#"+cami[2]).find('img').length ===0){
-							$("#"+cami[2]).fadeOut(200).fadeIn(200);
-							$("#"+cami[2]).unbind('click')
-							$("#"+cami[2]).click(function(){
-								if ($("#"+cami[2]).find('img').length === 0){
-									$("#"+cami[2]).append(token1)
-									$('#'+cami[0]).empty();
+					if ($("#"+a[2]).find('#coin3').length === 0){
+						if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
+							var cami = trans(a[2])
+							if ($("#"+cami[2]).find('img').length ===0){
+								$("#"+cami[2]).fadeOut(200).fadeIn(200);
+								$("#"+cami[2]).unbind('click')
+								$("#"+cami[2]).click(function(){
+									if ($("#"+cami[2]).find('img').length === 0){
+										$("#"+cami[2]).append(token1)
+										$('#'+cami[0]).empty();
+										$('#'+a[0]).empty()}
+									$("#"+cami[1]).unbind('click')
+									$("#"+cami[0]).unbind('click')
+									for (var e in r){
+										r[e].unbind('click')
+									}
+									verify()
+									r = []
+									if (o === 0){
+										o=1
+									}
+									if (tokensPos(blue).length === 0){
+										console.log('Yellow wins!!!')
+									}
+								})
+							}
+						}else{
+							$("#"+a[2]).fadeOut(200).fadeIn(200);
+							$("#"+a[2]).unbind('click')
+							$("#"+a[2]).click(function(){
+								if ($("#"+a[2]).find('img').length === 0){
+									$("#"+a[2]).append(token1)
 									$('#'+a[0]).empty()}
-								$("#"+cami[1]).unbind('click')
-								$("#"+cami[0]).unbind('click')
+								$("#"+a[1]).unbind('click')
+								$("#"+a[0]).unbind('click')
 								for (var e in r){
 									r[e].unbind('click')
 								}
 								verify()
 								r = []
-								o++
-								if (tokensPos(blue).length === 0){
-									console.log('Yellow wins!!!')
+								if (o === 0){
+									o=1
 								}
 							})
 						}
-					}else{
-						$("#"+a[2]).fadeOut(200).fadeIn(200);
-						$("#"+a[2]).unbind('click')
-						$("#"+a[2]).click(function(){
-							if ($("#"+a[2]).find('img').length === 0){
-								$("#"+a[2]).append(token1)
-								$('#'+a[0]).empty()}
-							$("#"+a[1]).unbind('click')
-							$("#"+a[0]).unbind('click')
-							for (var e in r){
-								r[e].unbind('click')
-							}
-							verify()
-							r = []
-							o++
-						})
 					}
 				}
 			}
@@ -255,87 +267,99 @@ var show = function(a){
 		if ($('#'+a[0]).find('#coin1').length > 0){
 			if (o > 0){
 				if ($("#"+a[a.length-1]).find('#coin1').length === 0){
-					if ($("#"+a[a.length-1]).find('#coin').length === 1||$("#"+a[a.length-1]).find('#coin3').length === 1){
-						var camo = trans(a[a.length-1])
-						if ($("#"+camo[camo.length-1]).find('img').length ===0){
-							$("#"+camo[camo.length-1]).fadeOut(200).fadeIn(200);
-							$("#"+camo[camo.length-1]).unbind('click')
-							$("#"+camo[camo.length-1]).click(function(){
-								if ($("#"+camo[camo.length-1]).find('img').length === 0){
-									$("#"+camo[camo.length-1]).append(token2)
-									$('#'+camo[0]).empty();
-									$('#'+a[0]).empty()}
-								$("#"+camo[camo.length-2]).unbind('click')
-								$("#"+camo[0]).unbind('click')
+					if ($("#"+a[a.length-1]).find('#coin4').length === 0){
+						if ($("#"+a[a.length-1]).find('#coin').length === 1||$("#"+a[a.length-1]).find('#coin3').length === 1){
+							var camo = trans(a[a.length-1])
+							if ($("#"+camo[camo.length-1]).find('img').length ===0){
+								$("#"+camo[camo.length-1]).fadeOut(200).fadeIn(200);
+								$("#"+camo[camo.length-1]).unbind('click')
+								$("#"+camo[camo.length-1]).click(function(){
+									if ($("#"+camo[camo.length-1]).find('img').length === 0){
+										$("#"+camo[camo.length-1]).append(token2)
+										$('#'+camo[0]).empty();
+										$('#'+a[0]).empty()}
+									$("#"+camo[camo.length-2]).unbind('click')
+									$("#"+camo[0]).unbind('click')
+									for (var e in r){
+										r[e].unbind('click')
+									}
+									verify()
+									r = []
+									if (o === 1){
+										o=0
+									}
+									if (tokensPos(yellow).length === 0){
+										console.log('Blue wins!!!')
+									}
+								})
+							}
+						}else{
+							$("#"+a[a.length-1]).fadeOut(200).fadeIn(200);
+							$("#"+a[a.length-1]).unbind('click')
+							$("#"+a[a.length-1]).click(function(){
+								if ($("#"+a[a.length-1]).find('img').length === 0){
+									$("#"+a[a.length-1]).append(token2)
+									$('#'+a[0]).empty();}
+								$("#"+a[a.length-2]).unbind('click')
+								$("#"+a[0]).unbind('click')
 								for (var e in r){
 									r[e].unbind('click')
 								}
 								verify()
 								r = []
-								o = 0
-								if (tokensPos(yellow).length === 0){
-									console.log('Blue wins!!!')
+								if (o === 1){
+									o=0
 								}
 							})
 						}
-					}else{
-						$("#"+a[a.length-1]).fadeOut(200).fadeIn(200);
-						$("#"+a[a.length-1]).unbind('click')
-						$("#"+a[a.length-1]).click(function(){
-							if ($("#"+a[a.length-1]).find('img').length === 0){
-								$("#"+a[a.length-1]).append(token2)
-								$('#'+a[0]).empty();}
-							$("#"+a[a.length-2]).unbind('click')
-							$("#"+a[0]).unbind('click')
-							for (var e in r){
-								r[e].unbind('click')
-							}
-							verify()
-							r = []
-							o = 0
-						})
 					}
 				}
 				if ($("#"+a[a.length-2]).find('#coin1').length === 0){
-					if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
-						var camu = trans(a[a.length-2])
-						if ($("#"+camu[camu.length-2]).find('img').length ===0){
-							$("#"+camu[camu.length-2]).fadeOut(200).fadeIn(200);
-							$("#"+camu[camu.length-2]).unbind('click')
-							$("#"+camu[camu.length-2]).click(function(){
-								if ($("#"+camu[camu.length-2]).find('img').length === 0){
-									$("#"+camu[camu.length-2]).append(token2)
-									$('#'+camu[0]).empty();
-									$('#'+a[0]).empty()}
-								$("#"+camu[camu.length-1]).unbind('click')
-								$("#"+camu[0]).unbind('click')
+					if ($("#"+a[a.length-2]).find('#coin4').length === 0){
+						if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
+							var camu = trans(a[a.length-2])
+							if ($("#"+camu[camu.length-2]).find('img').length ===0){
+								$("#"+camu[camu.length-2]).fadeOut(200).fadeIn(200);
+								$("#"+camu[camu.length-2]).unbind('click')
+								$("#"+camu[camu.length-2]).click(function(){
+									if ($("#"+camu[camu.length-2]).find('img').length === 0){
+										$("#"+camu[camu.length-2]).append(token2)
+										$('#'+camu[0]).empty();
+										$('#'+a[0]).empty()}
+									$("#"+camu[camu.length-1]).unbind('click')
+									$("#"+camu[0]).unbind('click')
+									for (var e in r){
+										r[e].unbind('click')
+									}
+									verify()
+									r = []
+									if (o === 1){
+										o=0
+									}
+									if (tokensPos(yellow).length === 0){
+										console.log('Blue wins!!!')
+									}
+								})
+							}
+						}else{
+							$("#"+a[a.length-2]).fadeOut(200).fadeIn(200);
+							$("#"+a[a.length-2]).unbind('click')
+							$("#"+a[a.length-2]).click(function(){
+								if ($("#"+a[a.length-2]).find('img').length === 0){
+									$("#"+a[a.length-2]).append(token2)
+									$('#'+a[0]).empty();}
+								$("#"+a[a.length-1]).unbind('click')
+								$("#"+a[0]).unbind('click')
 								for (var e in r){
 									r[e].unbind('click')
 								}
 								verify()
 								r = []
-								o = 0
-								if (tokensPos(yellow).length === 0){
-									console.log('Blue wins!!!')
+								if (o === 1){
+									o=0
 								}
 							})
 						}
-					}else{
-						$("#"+a[a.length-2]).fadeOut(200).fadeIn(200);
-						$("#"+a[a.length-2]).unbind('click')
-						$("#"+a[a.length-2]).click(function(){
-							if ($("#"+a[a.length-2]).find('img').length === 0){
-								$("#"+a[a.length-2]).append(token2)
-								$('#'+a[0]).empty();}
-							$("#"+a[a.length-1]).unbind('click')
-							$("#"+a[0]).unbind('click')
-							for (var e in r){
-								r[e].unbind('click')
-							}
-							verify()
-							r = []
-							o = 0
-						})
 					}
 				}
 			}
@@ -360,7 +384,9 @@ var show = function(a){
 								}
 								verify()
 								r = []
-								o++
+								if (o === 0){
+									o=1
+								}
 								if (tokensPos(blue).length === 0){
 									console.log('Yellow wins!!!')
 								}
@@ -380,7 +406,9 @@ var show = function(a){
 							}
 							verify()
 							r = []
-							o++
+							if (o === 0){
+								o=1
+							}
 						})
 					}
 				}
@@ -402,7 +430,9 @@ var show = function(a){
 								}
 								verify()
 								r = []
-								o++
+								if (o === 0){
+									o=1
+								}
 								if (tokensPos(blue).length === 0){
 									console.log('Yellow wins!!!')
 								}
@@ -422,7 +452,9 @@ var show = function(a){
 							}
 							verify()
 							r = []
-							o++
+							if (o === 0){
+								o=1
+							}
 						})
 					}
 				}
@@ -444,7 +476,9 @@ var show = function(a){
 								}
 								verify()
 								r = []
-								o++
+								if (o === 0){
+									o=1
+								}
 								if (tokensPos(blue).length === 0){
 									console.log('Yellow wins!!!')
 								}
@@ -464,7 +498,9 @@ var show = function(a){
 							}
 							verify()
 							r = []
-							o++
+							if (o === 0){
+								o=1
+							}
 						})
 					}
 				}
@@ -486,7 +522,9 @@ var show = function(a){
 								}
 								verify()
 								r = []
-								o++
+								if (o === 0){
+									o=1
+								}
 								if (tokensPos(blue).length === 0){
 									console.log('Yellow wins!!!')
 								}
@@ -506,7 +544,9 @@ var show = function(a){
 							}
 							verify()
 							r = []
-							o++
+							if (o === 0){
+								o=1
+							}
 						})
 					}
 				}
@@ -532,7 +572,9 @@ var show = function(a){
 								}
 								verify()
 								r = []
-								o=0
+								if (o === 1){
+									o=0
+								}
 								if (tokensPos(yellow).length === 0){
 									console.log('Blue wins!!!')
 								}
@@ -552,7 +594,9 @@ var show = function(a){
 							}
 							verify()
 							r = []
-							o=0
+							if (o === 1){
+								o=0
+							}
 						})
 					}
 				}
@@ -574,7 +618,9 @@ var show = function(a){
 								}
 								verify()
 								r = []
-								o=0
+								if (o === 1){
+									o=0
+								}
 								if (tokensPos(yellow).length === 0){
 									console.log('Blue wins!!!')
 								}
@@ -594,7 +640,9 @@ var show = function(a){
 							}
 							verify()
 							r = []
-							o=0
+							if (o === 1){
+								o=0
+							}
 						})
 					}
 				}
@@ -616,7 +664,9 @@ var show = function(a){
 								}
 								verify()
 								r = []
-								o = 0
+								if (o === 1){
+									o=0
+								}
 								if (tokensPos(yellow).length === 0){
 									console.log('Blue wins!!!')
 								}
@@ -636,7 +686,9 @@ var show = function(a){
 							}
 							verify()
 							r = []
-							o =0
+							if (o === 1){
+								o=0
+							}
 						})
 					}
 				}
@@ -658,7 +710,9 @@ var show = function(a){
 								}
 								verify()
 								r = []
-								o = 0
+								if (o === 1){
+									o=0
+								}
 								if (tokensPos(yellow).length === 0){
 									console.log('Blue wins!!!')
 								}
@@ -678,7 +732,9 @@ var show = function(a){
 							}
 							verify()
 							r = []
-							o = 0
+							if (o === 1){
+								o=0
+							}
 						})
 					}
 				}
