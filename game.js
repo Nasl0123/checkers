@@ -3,10 +3,14 @@ var black1 = "onclick='show(%id%)' style='display:block; height: 64px; width: 80
 var white = "<button id=%name% style='display:block; height: 64px; width: 80px; background: red; float:left'></button>";
 var block = "<div style='display:block;  width: 80px; background: white; float:left'>%num%</div>";
 var block1 = "<br><div style='display:block;  width: 80px; background: white;'>%num%</div>";
-var reset = "<button id='start' onclick='start();change1();' style='float: left;margin-left:260; height:40; color:green;'>Reset</button>"
-var play = '<button id="start" onclick="start();change();" style="float: left;margin-left:260; height:40; color:green;">Play</button>'
+var reset = "<button id='start' onclick='start();change1();' style='float: left; height:40; color:green;'>Reset</button>"
+var play = '<button id="start" onclick="start();change();" style="float: left; height:40; color:green;">Play</button>'
 var tur1 = "<div style='font-size:5ex;width:160px;float:left;'>Turn:</div>"
 var tur = "<div id='turn' style='width: 160px;background:black; height: 44px; border: 1px solid;float: left'></div>"
+var scoreb = "<div id='scoreb' style='width: 130px; height: 44px; border: 1px solid;float: left'>Blue<br>%num%</div>"
+var scorey = "<div id='scorey' style='width: 130px; height: 44px; border: 1px solid;float: left'>Yellow<br>%num%</div>"
+var bluescore = 0
+var yellowscore = 0
 
 var func = function(){
 	var a = ["A","B",'C','D','E','F','G','H'];
@@ -50,6 +54,8 @@ var squares = function(){
 	};
 	$('#main').append(tur1)
 	$('#main').append(tur)
+	$('#main').append(scoreb.replace('%num%',bluescore))
+	$('#main').append(scorey.replace('%num%',yellowscore))
 };
 //white = white.replace('%nam%',name[n])
 
@@ -74,7 +80,7 @@ lets();
 var availableTokens = ["A2", "A4", "A6", "A8","B1", "B3", "B5", "B7", "C2", "C4", "C6", "C8","D1", "D3", "D5", "D7", "E2", "E4", "E6", "E8","F1", "F3", "F5", "F7", "G2", "G4", "G6", "G8", "H1", "H3", "H5", "H7"]
 var a2=['A2','B1','B3','a','a'],a4=['A4','B3','B5','a','a'],a6=['A6','B5','B7','a','a'],a8=['A8','B7','a','a'],b1=['B1','a','C2',,'a','A2'],b3=['B3','C2','C4','A2','A4'],b5=['B5','C4','C6','A4','A6'],b7=['B7','C6','C8','A6','A8'],c2=['C2','D1','D3','B1','B3'],c4=['C4','D3','D5','B3','B5'],c6=['C6','D5','D7','B5','B7'],c8=['C8','D7','a','B7','B7']
 var d1=['D1','a','E2','a','C2'],d3=['D3','E2','E4','C2','C4'],d5=['D5','E4','E6','C4','C6'],d7=['D7','E6','E8','C6','C8'],e2=['E2','F1','F3','D1','D3'],e4=['E4','F3','F5','D3','D5'],e6=['E6','F5','F7','D5','D7'],e8=['E8','F7','a','D7','D7']
-var f1=['F1','a','G2','a','E2'],f3=['F3','G2','G4','E2','E4'],f5=['F5','G4','G6','E4','E6'],f7=['F7','G6','G8','E6','E8'],g2=['G2','H1','H3','F1','F3'],g4=['G4','H3','H5','F3','F5'],g6=['G6','H5','H7','F5','F7'],g8=['G8','H7','a','F7','F7'],h1=['H1','a','a','a','G2'],h3=['H3','a','a','G2','G4'],h5=['H5','a','a','G4','G6'],h7=['H7','a','a','G6','G8']
+var f1=['F1','a','G2','a','E2'],f3=['F3','G2','G4','E2','E4'],f5=['F5','G4','G6','E4','E6'],f7=['F7','G6','G8','E6','E8'],g2=['G2','H1','H3','F1','F3'],g4=['G4','H3','H5','F3','F5'],g6=['G6','H5','H7','F5','F7'],g8=['G8','H7','a','F7','a'],h1=['H1','a','a','a','G2'],h3=['H3','a','a','G2','G4'],h5=['H5','a','a','G4','G6'],h7=['H7','a','a','G6','G8']
 function Player(player) {
     player = new Image();
     player.src = 'images/coin.png';
@@ -127,6 +133,8 @@ var start = function(){
 		}
 	}
 	o = 0
+	bluescore = 0
+	yellowscore = 0
 };
 
 var tokenIn = function(a){
@@ -183,13 +191,16 @@ var show = function(a){
 									for (var e in r){
 										r[e].unbind('click')
 									}
-									verify()
 									r = []
 									if (o === 0){
 										o=1
 									}
+									yellowscore = yellowscore+1
+									$('#scorey').empty()
+									$('#scorey').append('Yellow<br>'+yellowscore)
+									verify()
 									if (tokensPos(blue).length === 0){
-										console.log('Yellow wins!!!')
+										alert('Yellow wins!!!')
 									}
 								})
 							}
@@ -205,11 +216,11 @@ var show = function(a){
 								for (var e in r){
 									r[e].unbind('click')
 								}
-								verify()
 								r = []
 								if (o === 0){
 									o=1
 								}
+								verify()
 							})
 						}
 					}
@@ -231,13 +242,16 @@ var show = function(a){
 									for (var e in r){
 										r[e].unbind('click')
 									}
-									verify()
 									r = []
 									if (o === 0){
 										o=1
 									}
+									yellowscore = yellowscore+1
+									$('#scorey').empty()
+									$('#scorey').append('Yellow<br>'+yellowscore)
+									verify()
 									if (tokensPos(blue).length === 0){
-										console.log('Yellow wins!!!')
+										alert('Yellow wins!!!')
 									}
 								})
 							}
@@ -253,11 +267,11 @@ var show = function(a){
 								for (var e in r){
 									r[e].unbind('click')
 								}
-								verify()
 								r = []
 								if (o === 0){
 									o=1
 								}
+								verify()
 							})
 						}
 					}
@@ -283,13 +297,16 @@ var show = function(a){
 									for (var e in r){
 										r[e].unbind('click')
 									}
-									verify()
 									r = []
 									if (o === 1){
 										o=0
 									}
+									bluescore = bluescore+1
+									$('#scoreb').empty()
+									$('#scoreb').append('Blue<br>'+bluescore)
+									verify()
 									if (tokensPos(yellow).length === 0){
-										console.log('Blue wins!!!')
+										alert('Blue wins!!!')
 									}
 								})
 							}
@@ -305,11 +322,11 @@ var show = function(a){
 								for (var e in r){
 									r[e].unbind('click')
 								}
-								verify()
 								r = []
 								if (o === 1){
 									o=0
 								}
+								verify()
 							})
 						}
 					}
@@ -331,13 +348,16 @@ var show = function(a){
 									for (var e in r){
 										r[e].unbind('click')
 									}
-									verify()
 									r = []
 									if (o === 1){
 										o=0
 									}
+									bluescore = bluescore+1
+									$('#scoreb').empty()
+									$('#scoreb').append('Blue<br>'+bluescore)
+									verify()
 									if (tokensPos(yellow).length === 0){
-										console.log('Blue wins!!!')
+										alert('Blue wins!!!')
 									}
 								})
 							}
@@ -353,11 +373,11 @@ var show = function(a){
 								for (var e in r){
 									r[e].unbind('click')
 								}
-								verify()
 								r = []
 								if (o === 1){
 									o=0
 								}
+								verify()
 							})
 						}
 					}
@@ -382,13 +402,16 @@ var show = function(a){
 								for (var e in r){
 									r[e].unbind('click')
 								}
-								verify()
 								r = []
 								if (o === 0){
 									o=1
 								}
+								yellowscore = yellowscore+1
+								$('#scorey').empty()
+								$('#scorey').append('Yellow<br>'+yellowscore)
+								verify()
 								if (tokensPos(blue).length === 0){
-									console.log('Yellow wins!!!')
+									alert('Yellow wins!!!')
 								}
 							})
 						}
@@ -404,11 +427,11 @@ var show = function(a){
 							for (var e in r){
 								r[e].unbind('click')
 							}
-							verify()
 							r = []
 							if (o === 0){
 								o=1
 							}
+							verify()
 						})
 					}
 				}
@@ -428,13 +451,16 @@ var show = function(a){
 								for (var e in r){
 									r[e].unbind('click')
 								}
-								verify()
 								r = []
 								if (o === 0){
 									o=1
 								}
+								yellowscore = yellowscore+1
+								$('#scorey').empty()
+								$('#scorey').append('Yellow<br>'+yellowscore)
+								verify()
 								if (tokensPos(blue).length === 0){
-									console.log('Yellow wins!!!')
+									alert('Yellow wins!!!')
 								}
 							})
 						}
@@ -450,11 +476,11 @@ var show = function(a){
 							for (var e in r){
 								r[e].unbind('click')
 							}
-							verify()
 							r = []
 							if (o === 0){
 								o=1
 							}
+							verify()
 						})
 					}
 				}
@@ -474,13 +500,16 @@ var show = function(a){
 								for (var e in r){
 									r[e].unbind('click')
 								}
-								verify()
 								r = []
 								if (o === 0){
 									o=1
 								}
+								yellowscore = yellowscore+1
+								$('#scorey').empty()
+								$('#scorey').append('Yellow<br>'+yellowscore)
+								verify()
 								if (tokensPos(blue).length === 0){
-									console.log('Yellow wins!!!')
+									alert('Yellow wins!!!')
 								}
 							})
 						}
@@ -496,11 +525,11 @@ var show = function(a){
 							for (var e in r){
 								r[e].unbind('click')
 							}
-							verify()
 							r = []
 							if (o === 0){
 								o=1
 							}
+							verify()
 						})
 					}
 				}
@@ -520,13 +549,16 @@ var show = function(a){
 								for (var e in r){
 									r[e].unbind('click')
 								}
-								verify()
 								r = []
 								if (o === 0){
 									o=1
 								}
+								yellowscore = yellowscore+1
+								$('#scorey').empty()
+								$('#scorey').append('Yellow<br>'+yellowscore)
+								verify()
 								if (tokensPos(blue).length === 0){
-									console.log('Yellow wins!!!')
+									alert('Yellow wins!!!')
 								}
 							})
 						}
@@ -542,11 +574,11 @@ var show = function(a){
 							for (var e in r){
 								r[e].unbind('click')
 							}
-							verify()
 							r = []
 							if (o === 0){
 								o=1
 							}
+							verify()
 						})
 					}
 				}
@@ -570,13 +602,16 @@ var show = function(a){
 								for (var e in r){
 									r[e].unbind('click')
 								}
-								verify()
 								r = []
 								if (o === 1){
 									o=0
 								}
+								bluescore = bluescore+1
+								$('#scoreb').empty()
+								$('#scoreb').append('Blue<br>'+bluescore)
+								verify()
 								if (tokensPos(yellow).length === 0){
-									console.log('Blue wins!!!')
+									alert('Blue wins!!!')
 								}
 							})
 						}
@@ -592,11 +627,11 @@ var show = function(a){
 							for (var e in r){
 								r[e].unbind('click')
 							}
-							verify()
 							r = []
 							if (o === 1){
 								o=0
 							}
+							verify()
 						})
 					}
 				}
@@ -616,13 +651,16 @@ var show = function(a){
 								for (var e in r){
 									r[e].unbind('click')
 								}
-								verify()
 								r = []
 								if (o === 1){
 									o=0
 								}
+								bluescore = bluescore+1
+								$('#scoreb').empty()
+								$('#scoreb').append('Blue<br>'+bluescore)
+								verify()
 								if (tokensPos(yellow).length === 0){
-									console.log('Blue wins!!!')
+									alert('Blue wins!!!')
 								}
 							})
 						}
@@ -638,11 +676,11 @@ var show = function(a){
 							for (var e in r){
 								r[e].unbind('click')
 							}
-							verify()
 							r = []
 							if (o === 1){
 								o=0
 							}
+							verify()
 						})
 					}
 				}
@@ -662,13 +700,16 @@ var show = function(a){
 								for (var e in r){
 									r[e].unbind('click')
 								}
-								verify()
 								r = []
 								if (o === 1){
 									o=0
 								}
+								bluescore = bluescore+1
+								$('#scoreb').empty()
+								$('#scoreb').append('Blue<br>'+bluescore)
+								verify()
 								if (tokensPos(yellow).length === 0){
-									console.log('Blue wins!!!')
+									alert('Blue wins!!!')
 								}
 							})
 						}
@@ -684,11 +725,11 @@ var show = function(a){
 							for (var e in r){
 								r[e].unbind('click')
 							}
-							verify()
 							r = []
 							if (o === 1){
 								o=0
 							}
+							verify()
 						})
 					}
 				}
@@ -708,13 +749,16 @@ var show = function(a){
 								for (var e in r){
 									r[e].unbind('click')
 								}
-								verify()
 								r = []
 								if (o === 1){
 									o=0
 								}
+								bluescore = bluescore+1
+								$('#scoreb').empty()
+								$('#scoreb').append('Blue<br>'+bluescore)
+								verify()
 								if (tokensPos(yellow).length === 0){
-									console.log('Blue wins!!!')
+									alert('Blue wins!!!')
 								}
 							})
 						}
@@ -730,11 +774,11 @@ var show = function(a){
 							for (var e in r){
 								r[e].unbind('click')
 							}
-							verify()
 							r = []
 							if (o === 1){
 								o=0
 							}
+							verify()
 						})
 					}
 				}
@@ -773,7 +817,7 @@ function verify(){
 			$('#'+ava[i]).append(token1)
 		}
 	}
-	if (o === 0){
+	if (o === 1){
 		$('#turn').empty()
 		$('#turn').append(new Player1())
 	}else{
