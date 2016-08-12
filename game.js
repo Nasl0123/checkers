@@ -132,7 +132,7 @@ var start = function(){
 			$("#"+availableTokens[e]).append(token)
 		}
 	}
-	o = 0
+	o = 1
 	bluescore = 0
 	yellowscore = 0
 };
@@ -148,7 +148,7 @@ var n = 0;
 var change = function(){
 	$("#start").remove()
 	$("#main").append(reset)
-	$("#turn").append(new Player())
+	$("#turn").append(new Player1())
 }
 var change1 = function(){
 	$("#start").remove()
@@ -164,7 +164,7 @@ var change1 = function(){
 $("button").click(function() {
                 var oID = $(this).attr("id");
                 });
-o = 0
+o = 1
 r = []
 var show = function(a){
 	var token1 = new Player();
