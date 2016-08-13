@@ -198,7 +198,7 @@ var show = function(a){
 									if (o === 0){
 										o=1
 									}
-									yellowscore = yellowscore+1
+									yellowscore = 12 - tokensPos(blue).length
 									$('#scorey').empty()
 									$('#scorey').append('Yellow<br>'+yellowscore)
 									verify()
@@ -209,7 +209,7 @@ var show = function(a){
 							}
 							ra.push(cam[1])
 							so.push(a[1])
-							show1(trans(cam[1]),a[0],so)
+							show1(trans(cam[1]),a[0],so,3)
 							so = []
 						}else{
 							$("#"+a[1]).fadeOut(200).fadeIn(200);
@@ -257,7 +257,7 @@ var show = function(a){
 									if (o === 0){
 										o=1
 									}
-									yellowscore = yellowscore+1
+									yellowscore = 12 - tokensPos(blue).length
 									$('#scorey').empty()
 									$('#scorey').append('Yellow<br>'+yellowscore)
 									verify()
@@ -268,7 +268,7 @@ var show = function(a){
 							}
 							ra.push(cami[2])
 							so.push(a[2])
-							show1(trans(cami[2]),a[0],so)
+							show1(trans(cami[2]),a[0],so,4)
 							so = []
 						}else{
 							$("#"+a[2]).fadeOut(200).fadeIn(200);
@@ -320,7 +320,7 @@ var show = function(a){
 									if (o === 1){
 										o=0
 									}
-									bluescore = bluescore+1
+									bluescore = 12 - tokensPos(yellow).length
 									$('#scoreb').empty()
 									$('#scoreb').append('Blue<br>'+bluescore)
 									verify()
@@ -331,7 +331,7 @@ var show = function(a){
 							}
 							ra.push(camo[camo.length-1])
 							so.push(a[a.length-1])
-							show1(trans(camo[camo.length-1]),a[0],so)
+							show1(trans(camo[camo.length-1]),a[0],so,1)
 							so = []
 						}else{
 							$("#"+a[a.length-1]).fadeOut(200).fadeIn(200);
@@ -379,7 +379,7 @@ var show = function(a){
 									if (o === 1){
 										o=0
 									}
-									bluescore = bluescore+1
+									bluescore = 12 - tokensPos(yellow).length
 									$('#scoreb').empty()
 									$('#scoreb').append('Blue<br>'+bluescore)
 									verify()
@@ -390,7 +390,7 @@ var show = function(a){
 							}
 							ra.push(camu[camu.length-2])
 							so.push(a[a.length-2])
-							show1(trans(camu[camu.length-2]),a[0],so)
+							show1(trans(camu[camu.length-2]),a[0],so,2)
 							so = []
 						}else{
 							$("#"+a[a.length-2]).fadeOut(200).fadeIn(200);
@@ -441,7 +441,7 @@ var show = function(a){
 								if (o === 0){
 									o=1
 								}
-								yellowscore = yellowscore+1
+								yellowscore = 12 - tokensPos(blue).length
 								$('#scorey').empty()
 								$('#scorey').append('Yellow<br>'+yellowscore)
 								verify()
@@ -452,7 +452,7 @@ var show = function(a){
 						}
 						ra.push(cam1[1])
 						so.push(a[1])
-						show1(trans(cam1[1]),a[0],so)
+						show1(trans(cam1[1]),a[0],so,3)
 						so = []
 					}else{
 						$("#"+a[1]).fadeOut(200).fadeIn(200);
@@ -498,7 +498,7 @@ var show = function(a){
 								if (o === 0){
 									o=1
 								}
-								yellowscore = yellowscore+1
+								yellowscore = 12 - tokensPos(blue).length
 								$('#scorey').empty()
 								$('#scorey').append('Yellow<br>'+yellowscore)
 								verify()
@@ -509,7 +509,7 @@ var show = function(a){
 						}
 						ra.push(cami1[2])
 						so.push(a[2])
-						show1(trans(cami1[2]),a[0],so)
+						show1(trans(cami1[2]),a[0],so,4)
 						so = []
 					}else{
 						$("#"+a[2]).fadeOut(200).fadeIn(200);
@@ -555,7 +555,7 @@ var show = function(a){
 								if (o === 0){
 									o=1
 								}
-								yellowscore = yellowscore+1
+								yellowscore = 12 - tokensPos(blue).length
 								$('#scorey').empty()
 								$('#scorey').append('Yellow<br>'+yellowscore)
 								verify()
@@ -566,7 +566,7 @@ var show = function(a){
 						}
 						ra.push(camo1[camo1.length-1])
 						so.push(a[a.length-1])
-						show1(trans(camo1[camo1.length-1]),a[0],so)
+						show1(trans(camo1[camo1.length-1]),a[0],so,1)
 						so = []
 					}else{
 						$("#"+a[a.length-1]).fadeOut(200).fadeIn(200);
@@ -612,7 +612,7 @@ var show = function(a){
 								if (o === 0){
 									o=1
 								}
-								yellowscore = yellowscore+1
+								yellowscore = 12 - tokensPos(blue).length
 								$('#scorey').empty()
 								$('#scorey').append('Yellow<br>'+yellowscore)
 								verify()
@@ -623,7 +623,7 @@ var show = function(a){
 						}
 						ra.push(camu1[camu1.length-2])
 						so.push(a[a.length-2])
-						show1(trans(camu1[camu1.length-2]),a[0],so)
+						show1(trans(camu1[camu1.length-2]),a[0],so,2)
 						so = []
 					}else{
 						$("#"+a[a.length-2]).fadeOut(200).fadeIn(200);
@@ -673,7 +673,7 @@ var show = function(a){
 								if (o === 1){
 									o=0
 								}
-								bluescore = bluescore+1
+								bluescore = 12 - tokensPos(yellow).length
 								$('#scoreb').empty()
 								$('#scoreb').append('Blue<br>'+bluescore)
 								verify()
@@ -684,7 +684,7 @@ var show = function(a){
 						}
 						ra.push(cam2[1])
 						so.push(a[1])
-						show1(trans(cam2[1]),a[0],so)
+						show1(trans(cam2[1]),a[0],so,3)
 						so = []
 					}else{
 						$("#"+a[1]).fadeOut(200).fadeIn(200);
@@ -730,7 +730,7 @@ var show = function(a){
 								if (o === 1){
 									o=0
 								}
-								bluescore = bluescore+1
+								bluescore = 12 - tokensPos(yellow).length
 								$('#scoreb').empty()
 								$('#scoreb').append('Blue<br>'+bluescore)
 								verify()
@@ -741,7 +741,7 @@ var show = function(a){
 						}
 						ra.push(cami2[2])
 						so.push(a[2])
-						show1(trans(cami2[2]),a[0],so)
+						show1(trans(cami2[2]),a[0],so,4)
 						so = []
 					}else{
 						$("#"+a[2]).fadeOut(200).fadeIn(200);
@@ -787,7 +787,7 @@ var show = function(a){
 								if (o === 1){
 									o=0
 								}
-								bluescore = bluescore+1
+								bluescore = 12 - tokensPos(yellow).length
 								$('#scoreb').empty()
 								$('#scoreb').append('Blue<br>'+bluescore)
 								verify()
@@ -798,7 +798,7 @@ var show = function(a){
 						}
 						ra.push(camo2[camo2.length-1])
 						so.push(a[a.length-1])
-						show1(trans(camo2[camo2.length-1]),a[0],so)
+						show1(trans(camo2[camo2.length-1]),a[0],so,1)
 						so = []
 					}else{
 						$("#"+a[a.length-1]).fadeOut(200).fadeIn(200);
@@ -844,7 +844,7 @@ var show = function(a){
 								if (o === 1){
 									o=0
 								}
-								bluescore = bluescore+1
+								bluescore = 12 - tokensPos(yellow).length
 								$('#scoreb').empty()
 								$('#scoreb').append('Blue<br>'+bluescore)
 								verify()
@@ -855,7 +855,7 @@ var show = function(a){
 						}
 						ra.push(camu2[camu2.length-2])
 						so.push(a[a.length-2])
-						show1(trans(camu2[camu.length-2]),a[0],so)
+						show1(trans(camu2[camu.length-2]),a[0],so,2)
 						so = []
 					}else{
 						$("#"+a[a.length-2]).fadeOut(200).fadeIn(200);
@@ -890,7 +890,7 @@ var show = function(a){
 var ra = []
 
 
-var show1 = function(a,b,c){
+var show1 = function(a,b,c,g){
 	var token1 = new Player();
 	var token2 = new Player1();
 	var token3 = new Player3();
@@ -899,7 +899,7 @@ var show1 = function(a,b,c){
 		if ($('#'+b).find('#coin').length > 0){
 			if (o === 0){
 				if ($("#"+a[1]).find('#coin').length === 0){
-					if ($("#"+a[1]).find('#coin3').length === 0){
+					if ($("#"+a[1]).find('#coin3').length === 0&&g != 1){
 						if ($("#"+a[1]).find('#coin1').length === 1||$("#"+a[1]).find('#coin4').length === 1){
 							var cam = trans(a[1])
 							if ($("#"+cam[1]).find('img').length ===0){
@@ -928,7 +928,7 @@ var show1 = function(a,b,c){
 									if (o === 0){
 										o=1
 									}
-									yellowscore = yellowscore+2
+									yellowscore = 12 - tokensPos(blue).length
 									$('#scorey').empty()
 									$('#scorey').append('Yellow<br>'+yellowscore)
 									verify()
@@ -940,12 +940,12 @@ var show1 = function(a,b,c){
 							ra.push(cam[1])
 							var d = c
 							d.push(a[1])
-							show1(trans(cam[1]),b,d)
+							show1(trans(cam[1]),b,d,3)
 						}
 					}
 				}
 				if ($("#"+a[2]).find('#coin').length === 0){
-					if ($("#"+a[2]).find('#coin3').length === 0){
+					if ($("#"+a[2]).find('#coin3').length === 0&&g != 2){
 						if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
 							var cami = trans(a[2])
 							if ($("#"+cami[2]).find('img').length ===0){
@@ -974,7 +974,7 @@ var show1 = function(a,b,c){
 									if (o === 0){
 										o=1
 									}
-									yellowscore = yellowscore+2
+									yellowscore = 12 - tokensPos(blue).length
 									$('#scorey').empty()
 									$('#scorey').append('Yellow<br>'+yellowscore)
 									verify()
@@ -986,7 +986,7 @@ var show1 = function(a,b,c){
 							ra.push(cami[2])
 							var d = c
 							d.push(a[2])
-							show1(trans(cami[2]),b,d)
+							show1(trans(cami[2]),b,d,4)
 						}
 					}
 				}
@@ -995,7 +995,7 @@ var show1 = function(a,b,c){
 		if ($('#'+b).find('#coin1').length > 0){
 			if (o > 0){
 				if ($("#"+a[a.length-1]).find('#coin1').length === 0){
-					if ($("#"+a[a.length-1]).find('#coin4').length === 0){
+					if ($("#"+a[a.length-1]).find('#coin4').length === 0&&g != 3){
 						if ($("#"+a[a.length-1]).find('#coin').length === 1||$("#"+a[a.length-1]).find('#coin3').length === 1){
 							var camo = trans(a[a.length-1])
 							if ($("#"+camo[camo.length-1]).find('img').length ===0){
@@ -1024,7 +1024,7 @@ var show1 = function(a,b,c){
 									if (o === 1){
 										o=0
 									}
-									bluescore = bluescore+2
+									bluescore = 12 - tokensPos(yellow).length
 									$('#scoreb').empty()
 									$('#scoreb').append('Blue<br>'+bluescore)
 									verify()
@@ -1036,12 +1036,12 @@ var show1 = function(a,b,c){
 							ra.push(camo[camo.length-1])
 							var d = c
 							d.push(a[a.length-1])
-							show1(trans(camo[camo.length-1]),b,d)
+							show1(trans(camo[camo.length-1]),b,d,1)
 						}
 					}
 				}
 				if ($("#"+a[a.length-2]).find('#coin1').length === 0){
-					if ($("#"+a[a.length-2]).find('#coin4').length === 0){
+					if ($("#"+a[a.length-2]).find('#coin4').length === 0&&g != 4){
 						if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
 							var camu = trans(a[a.length-2])
 							if ($("#"+camu[camu.length-2]).find('img').length ===0){
@@ -1070,7 +1070,7 @@ var show1 = function(a,b,c){
 									if (o === 1){
 										o=0
 									}
-									bluescore = bluescore+2
+									bluescore = 12 - tokensPos(yellow).length
 									$('#scoreb').empty()
 									$('#scoreb').append('Blue<br>'+bluescore)
 									verify()
@@ -1082,7 +1082,7 @@ var show1 = function(a,b,c){
 							ra.push(camu[camu.length-2])
 							var d = c
 							d.push(a[a.length-2])
-							show1(trans(camu[camu.length-2]),b,d)
+							show1(trans(camu[camu.length-2]),b,d,2)
 						}
 					}
 				}
@@ -1090,7 +1090,7 @@ var show1 = function(a,b,c){
 		}
 		if ($('#'+b).find('#coin3').length > 0){
 			if (o === 0){
-				if ($("#"+a[1]).find('#coin').length === 0){
+				if ($("#"+a[1]).find('#coin').length === 0&&g != 1){
 					if ($("#"+a[1]).find('#coin1').length === 1||$("#"+a[1]).find('#coin4').length === 1){
 						var cam1 = trans(a[1])
 						if ($("#"+cam1[1]).find('img').length ===0){
@@ -1119,7 +1119,7 @@ var show1 = function(a,b,c){
 								if (o === 0){
 									o=1
 								}
-								yellowscore = yellowscore+2
+								yellowscore = 12 - tokensPos(blue).length
 								$('#scorey').empty()
 								$('#scorey').append('Yellow<br>'+yellowscore)
 								verify()
@@ -1131,10 +1131,10 @@ var show1 = function(a,b,c){
 						ra.push(cam1[1])
 						var d = c
 						d.push(a[1])
-						show1(trans(cam1[1]),b,d)
+						show1(trans(cam1[1]),b,d,3)
 					}
 				}
-				if ($("#"+a[2]).find('#coin').length === 0){
+				if ($("#"+a[2]).find('#coin').length === 0&&g != 2){
 					if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
 						var cami1 = trans(a[2])
 						if ($("#"+cami1[2]).find('img').length ===0){
@@ -1163,7 +1163,7 @@ var show1 = function(a,b,c){
 								if (o === 0){
 									o=1
 								}
-								yellowscore = yellowscore+2
+								yellowscore = 12 - tokensPos(blue).length
 								$('#scorey').empty()
 								$('#scorey').append('Yellow<br>'+yellowscore)
 								verify()
@@ -1175,10 +1175,10 @@ var show1 = function(a,b,c){
 						ra.push(cami1[2])
 						var d = c
 						d.push(a[2])
-						show1(trans(cami1[2]),b,d)
+						show1(trans(cami1[2]),b,d,4)
 					}
 				}
-				if ($("#"+a[a.length-1]).find('#coin').length === 0){
+				if ($("#"+a[a.length-1]).find('#coin').length === 0&&g != 3){
 					if ($("#"+a[a.length-1]).find('#coin1').length === 1||$("#"+a[a.length-1]).find('#coin4').length === 1){
 						var camo1 = trans(a[a.length-1])
 						if ($("#"+camo1[camo1.length-1]).find('img').length ===0){
@@ -1207,7 +1207,7 @@ var show1 = function(a,b,c){
 								if (o === 0){
 									o=1
 								}
-								yellowscore = yellowscore+2
+								yellowscore = 12 - tokensPos(blue).length
 								$('#scorey').empty()
 								$('#scorey').append('Yellow<br>'+yellowscore)
 								verify()
@@ -1219,10 +1219,10 @@ var show1 = function(a,b,c){
 						ra.push(camo1[camo1.length-1])
 						var d = c
 						d.push(a[a.length-1])
-						show1(trans(camo1[camo1.length-1]),b,d)
+						show1(trans(camo1[camo1.length-1]),b,d,1)
 					}
 				}
-				if ($("#"+a[a.length-2]).find('#coin').length === 0){
+				if ($("#"+a[a.length-2]).find('#coin').length === 0&&g != 4){
 					if ($("#"+a[a.length-2]).find('#coin1').length === 1||$("#"+a[a.length-2]).find('#coin4').length === 1){
 						var camu1 = trans(a[a.length-2])
 						if ($("#"+camu1[camu1.length-2]).find('img').length ===0){
@@ -1251,7 +1251,7 @@ var show1 = function(a,b,c){
 								if (o === 0){
 									o=1
 								}
-								yellowscore = yellowscore+2
+								yellowscore = 12 - tokensPos(blue).length
 								$('#scorey').empty()
 								$('#scorey').append('Yellow<br>'+yellowscore)
 								verify()
@@ -1263,14 +1263,14 @@ var show1 = function(a,b,c){
 						ra.push(camu1[camu1.length-2])
 						var d = c
 						d.push(a[a.length-2])
-						show1(trans(camu1[camu1.length-2]),b,d)
+						show1(trans(camu1[camu1.length-2]),b,d,2)
 					}
 				}
 			}
 		}
 		if ($('#'+b).find('#coin4').length > 0){
 			if (o > 0){
-				if ($("#"+a[1]).find('#coin1').length === 0){
+				if ($("#"+a[1]).find('#coin1').length === 0&&g != 1){
 					if ($("#"+a[1]).find('#coin').length === 1||$("#"+a[1]).find('#coin3').length === 1){
 						var cam2 = trans(a[1])
 						if ($("#"+cam2[1]).find('img').length ===0){
@@ -1299,7 +1299,7 @@ var show1 = function(a,b,c){
 								if (o === 1){
 									o=0
 								}
-								bluescore = bluescore+2
+								bluescore = 12 - tokensPos(yellow).length
 								$('#scoreb').empty()
 								$('#scoreb').append('Blue<br>'+bluescore)
 								verify()
@@ -1311,10 +1311,10 @@ var show1 = function(a,b,c){
 						ra.push(cam2[1])
 						var d = c
 						d.push(a[1])
-						show1(trans(cam2[1]),b,d)
+						show1(trans(cam2[1]),b,d,3)
 					}
 				}
-				if ($("#"+a[2]).find('#coin1').length === 0){
+				if ($("#"+a[2]).find('#coin1').length === 0&&g != 2){
 					if ($("#"+a[2]).find('#coin').length === 1||$("#"+a[2]).find('#coin3').length === 1){
 						var cami2 = trans(a[2])
 						if ($("#"+cami2[2]).find('img').length ===0){
@@ -1343,7 +1343,7 @@ var show1 = function(a,b,c){
 								if (o === 1){
 									o=0
 								}
-								bluescore = bluescore+2
+								bluescore = 12 - tokensPos(yellow).length
 								$('#scoreb').empty()
 								$('#scoreb').append('Blue<br>'+bluescore)
 								verify()
@@ -1355,10 +1355,10 @@ var show1 = function(a,b,c){
 						ra.push(cami2[2])
 						var d = c
 						d.push(a[2])
-						show1(trans(cami2[2]),b,d)
+						show1(trans(cami2[2]),b,d,4)
 					}
 				}
-				if ($("#"+a[a.length-1]).find('#coin1').length === 0){
+				if ($("#"+a[a.length-1]).find('#coin1').length === 0&&g != 3){
 					if ($("#"+a[a.length-1]).find('#coin').length === 1||$("#"+a[a.length-1]).find('#coin3').length === 1){
 						var camo2 = trans(a[a.length-1])
 						if ($("#"+camo2[camo2.length-1]).find('img').length ===0){
@@ -1387,7 +1387,7 @@ var show1 = function(a,b,c){
 								if (o === 1){
 									o=0
 								}
-								bluescore = bluescore+2
+								bluescore = 12 - tokensPos(yellow).length
 								$('#scoreb').empty()
 								$('#scoreb').append('Blue<br>'+bluescore)
 								verify()
@@ -1399,10 +1399,10 @@ var show1 = function(a,b,c){
 						ra.push(camo2[camo2.length-1])
 						var d = c
 						d.push(a[a.length-1])
-						show1(trans(camo2[camo2.length-1]),b,d)
+						show1(trans(camo2[camo2.length-1]),b,d,1)
 					}
 				}
-				if ($("#"+a[a.length-2]).find('#coin1').length === 0){
+				if ($("#"+a[a.length-2]).find('#coin1').length === 0&&g != 4){
 					if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
 						var camu2 = trans(a[a.length-2])
 						if ($("#"+camu2[camu2.length-2]).find('img').length ===0){
@@ -1431,7 +1431,7 @@ var show1 = function(a,b,c){
 								if (o === 1){
 									o=0
 								}
-								bluescore = bluescore+2
+								bluescore = 12 - tokensPos(yellow).length
 								$('#scoreb').empty()
 								$('#scoreb').append('Blue<br>'+bluescore)
 								verify()
@@ -1443,7 +1443,7 @@ var show1 = function(a,b,c){
 						ra.push(camu2[camu2.length-2])
 						var d = c
 						d.push(a[a.length-2])
-						show1(trans(camu2[camu2.length-2]),b,d)
+						show1(trans(camu2[camu2.length-2]),b,d,2)
 					}
 				}
 			}
