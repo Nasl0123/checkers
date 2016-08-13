@@ -224,6 +224,10 @@ var show = function(a){
 									r[e].unbind('click')
 								}
 								r = []
+								for (var z in ra){
+									$('#'+ra[z]).unbind('click')
+								}
+								ra = []
 								if (o === 0){
 									o=1
 								}
@@ -283,6 +287,10 @@ var show = function(a){
 									r[e].unbind('click')
 								}
 								r = []
+								for (var z in ra){
+									$('#'+ra[z]).unbind('click')
+								}
+								ra = []
 								if (o === 0){
 									o=1
 								}
@@ -346,6 +354,10 @@ var show = function(a){
 									r[e].unbind('click')
 								}
 								r = []
+								for (var z in ra){
+									$('#'+ra[z]).unbind('click')
+								}
+								ra = []
 								if (o === 1){
 									o=0
 								}
@@ -405,6 +417,10 @@ var show = function(a){
 									r[e].unbind('click')
 								}
 								r = []
+								for (var z in ra){
+									$('#'+ra[z]).unbind('click')
+								}
+								ra = []
 								if (o === 1){
 									o=0
 								}
@@ -467,6 +483,10 @@ var show = function(a){
 								r[e].unbind('click')
 							}
 							r = []
+							for (var z in ra){
+								$('#'+ra[z]).unbind('click')
+							}
+							ra = []
 							if (o === 0){
 								o=1
 							}
@@ -524,6 +544,10 @@ var show = function(a){
 								r[e].unbind('click')
 							}
 							r = []
+							for (var z in ra){
+								$('#'+ra[z]).unbind('click')
+							}
+							ra = []
 							if (o === 0){
 								o=1
 							}
@@ -581,6 +605,10 @@ var show = function(a){
 								r[e].unbind('click')
 							}
 							r = []
+							for (var z in ra){
+								$('#'+ra[z]).unbind('click')
+							}
+							ra = []
 							if (o === 0){
 								o=1
 							}
@@ -638,6 +666,10 @@ var show = function(a){
 								r[e].unbind('click')
 							}
 							r = []
+							for (var z in ra){
+								$('#'+ra[z]).unbind('click')
+							}
+							ra = []
 							if (o === 0){
 								o=1
 							}
@@ -699,6 +731,10 @@ var show = function(a){
 								r[e].unbind('click')
 							}
 							r = []
+							for (var z in ra){
+								$('#'+ra[z]).unbind('click')
+							}
+							ra = []
 							if (o === 1){
 								o=0
 							}
@@ -756,6 +792,10 @@ var show = function(a){
 								r[e].unbind('click')
 							}
 							r = []
+							for (var z in ra){
+								$('#'+ra[z]).unbind('click')
+							}
+							ra = []
 							if (o === 1){
 								o=0
 							}
@@ -813,6 +853,10 @@ var show = function(a){
 								r[e].unbind('click')
 							}
 							r = []
+							for (var z in ra){
+								$('#'+ra[z]).unbind('click')
+							}
+							ra = []
 							if (o === 1){
 								o=0
 							}
@@ -870,6 +914,10 @@ var show = function(a){
 								r[e].unbind('click')
 							}
 							r = []
+							for (var z in ra){
+								$('#'+ra[z]).unbind('click')
+							}
+							ra = []
 							if (o === 1){
 								o=0
 							}
@@ -896,7 +944,7 @@ var show1 = function(a,b,c,g){
 	var token3 = new Player3();
 	var token4 = new Player4();
 	if ($('#'+b).find('img').length > 0&&$('#'+a[0]).find('img').length === 0){
-		if ($('#'+b).find('#coin').length > 0){
+		if ($('#'+b).find('#coin').length > 0&&$('#'+a[1]).find('img').length > 0){
 			if (o === 0){
 				if ($("#"+a[1]).find('#coin').length === 0){
 					if ($("#"+a[1]).find('#coin3').length === 0&&g != 1){
@@ -949,7 +997,7 @@ var show1 = function(a,b,c,g){
 						}
 					}
 				}
-				if ($("#"+a[2]).find('#coin').length === 0){
+				if ($("#"+a[2]).find('#coin').length === 0&&$('#'+a[2]).find('img').length > 0){
 					if ($("#"+a[2]).find('#coin3').length === 0&&g != 2){
 						if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
 							var cami = trans(a[2])
@@ -1002,7 +1050,7 @@ var show1 = function(a,b,c,g){
 				}
 			}
 		}
-		if ($('#'+b).find('#coin1').length > 0){
+		if ($('#'+b).find('#coin1').length > 0&&$('#'+a[a.length-1]).find('img').length > 0){
 			if (o > 0){
 				if ($("#"+a[a.length-1]).find('#coin1').length === 0){
 					if ($("#"+a[a.length-1]).find('#coin4').length === 0&&g != 3){
@@ -1055,7 +1103,7 @@ var show1 = function(a,b,c,g){
 						}
 					}
 				}
-				if ($("#"+a[a.length-2]).find('#coin1').length === 0){
+				if ($("#"+a[a.length-2]).find('#coin1').length === 0&&$('#'+a[a.length-2]).find('img').length > 0){
 					if ($("#"+a[a.length-2]).find('#coin4').length === 0&&g != 4){
 						if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
 							var camu = trans(a[a.length-2])
@@ -1108,7 +1156,7 @@ var show1 = function(a,b,c,g){
 				}
 			}
 		}
-		if ($('#'+b).find('#coin3').length > 0){
+		if ($('#'+b).find('#coin3').length > 0&&$('#'+a[1]).find('img').length > 0){
 			if (o === 0){
 				if ($("#"+a[1]).find('#coin').length === 0&&g != 1){
 					if ($("#"+a[1]).find('#coin1').length === 1||$("#"+a[1]).find('#coin4').length === 1){
@@ -1159,7 +1207,7 @@ var show1 = function(a,b,c,g){
 						show1(trans(cam1[1]),b,d,3)
 					}
 				}
-				if ($("#"+a[2]).find('#coin').length === 0&&g != 2){
+				if ($("#"+a[2]).find('#coin').length === 0&&g != 2&&$('#'+a[2]).find('img').length > 0){
 					if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
 						var cami1 = trans(a[2])
 						var m = i+1
@@ -1208,7 +1256,7 @@ var show1 = function(a,b,c,g){
 						show1(trans(cami1[2]),b,d,4)
 					}
 				}
-				if ($("#"+a[a.length-1]).find('#coin').length === 0&&g != 3){
+				if ($("#"+a[a.length-1]).find('#coin').length === 0&&g != 3&&$('#'+a[a.length-1]).find('img').length > 0){
 					if ($("#"+a[a.length-1]).find('#coin1').length === 1||$("#"+a[a.length-1]).find('#coin4').length === 1){
 						var camo1 = trans(a[a.length-1])
 						var m = i+1
@@ -1257,7 +1305,7 @@ var show1 = function(a,b,c,g){
 						show1(trans(camo1[camo1.length-1]),b,d,1)
 					}
 				}
-				if ($("#"+a[a.length-2]).find('#coin').length === 0&&g != 4){
+				if ($("#"+a[a.length-2]).find('#coin').length === 0&&g != 4&&$('#'+a[a.length-2]).find('img').length > 0){
 					if ($("#"+a[a.length-2]).find('#coin1').length === 1||$("#"+a[a.length-2]).find('#coin4').length === 1){
 						var camu1 = trans(a[a.length-2])
 						var m = i+1
@@ -1308,7 +1356,7 @@ var show1 = function(a,b,c,g){
 				}
 			}
 		}
-		if ($('#'+b).find('#coin4').length > 0){
+		if ($('#'+b).find('#coin4').length > 0&&$('#'+a[1]).find('img').length > 0){
 			if (o > 0){
 				if ($("#"+a[1]).find('#coin1').length === 0&&g != 1){
 					if ($("#"+a[1]).find('#coin').length === 1||$("#"+a[1]).find('#coin3').length === 1){
@@ -1359,7 +1407,7 @@ var show1 = function(a,b,c,g){
 						show1(trans(cam2[1]),b,d,3)
 					}
 				}
-				if ($("#"+a[2]).find('#coin1').length === 0&&g != 2){
+				if ($("#"+a[2]).find('#coin1').length === 0&&g != 2&&$('#'+a[2]).find('img').length > 0){
 					if ($("#"+a[2]).find('#coin').length === 1||$("#"+a[2]).find('#coin3').length === 1){
 						var cami2 = trans(a[2])
 						var m = i+1
@@ -1408,7 +1456,7 @@ var show1 = function(a,b,c,g){
 						show1(trans(cami2[2]),b,d,4)
 					}
 				}
-				if ($("#"+a[a.length-1]).find('#coin1').length === 0&&g != 3){
+				if ($("#"+a[a.length-1]).find('#coin1').length === 0&&g != 3&&$('#'+a[a.length-1]).find('img').length > 0){
 					if ($("#"+a[a.length-1]).find('#coin').length === 1||$("#"+a[a.length-1]).find('#coin3').length === 1){
 						var camo2 = trans(a[a.length-1])
 						var m = i+1
@@ -1457,7 +1505,7 @@ var show1 = function(a,b,c,g){
 						show1(trans(camo2[camo2.length-1]),b,d,1)
 					}
 				}
-				if ($("#"+a[a.length-2]).find('#coin1').length === 0&&g != 4){
+				if ($("#"+a[a.length-2]).find('#coin1').length === 0&&g != 4&&$('#'+a[a.length-2]).find('img').length > 0){
 					if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
 						var camu2 = trans(a[a.length-2])
 						var m = i+1
