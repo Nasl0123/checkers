@@ -895,7 +895,7 @@ var show1 = function(a,b,c,g){
 	var token2 = new Player1();
 	var token3 = new Player3();
 	var token4 = new Player4();
-	if ($('#'+b).find('img').length > 0){
+	if ($('#'+b).find('img').length > 0&&$('#'+a[0]).find('img').length === 0){
 		if ($('#'+b).find('#coin').length > 0){
 			if (o === 0){
 				if ($("#"+a[1]).find('#coin').length === 0){
