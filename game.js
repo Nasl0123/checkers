@@ -11,7 +11,7 @@ var scoreb = "<div id='scoreb' style='width: 130px; height: 44px; border: 1px so
 var scorey = "<div id='scorey' style='width: 130px; height: 44px; border: 1px solid;float: left'>Yellow<br>%num%</div>"
 var bluescore = 0
 var yellowscore = 0
-
+var i = 0
 var func = function(){
 	var a = ["A","B",'C','D','E','F','G','H'];
 	var b = ['1','2','3','4','5','6','7','8'];
@@ -902,6 +902,7 @@ var show1 = function(a,b,c,g){
 					if ($("#"+a[1]).find('#coin3').length === 0&&g != 1){
 						if ($("#"+a[1]).find('#coin1').length === 1||$("#"+a[1]).find('#coin4').length === 1){
 							var cam = trans(a[1])
+							var m = i+1
 							if ($("#"+cam[1]).find('img').length ===0){
 								$("#"+cam[1]).fadeOut(200).fadeIn(200);
 								$("#"+cam[1]).unbind('click')
@@ -910,10 +911,13 @@ var show1 = function(a,b,c,g){
 										$("#"+cam[1]).append(token1)
 										$('#'+cam[0]).empty();
 										$('#'+b).empty()
-										c.splice(c.length-1,1)
 										for (var sin in c){
-											$('#'+c[sin]).empty()
+											if (m > 0){
+												$('#'+c[sin]).empty()
+												m = m-1
+											}
 										}
+										i=0
 										$('#'+a[0]).unbind('click')}
 									$("#"+cam[2]).unbind('click')
 									$("#"+cam[0]).unbind('click')
@@ -937,6 +941,7 @@ var show1 = function(a,b,c,g){
 									}
 								})
 							}
+							i++
 							ra.push(cam[1])
 							var d = c
 							d.push(a[1])
@@ -948,6 +953,7 @@ var show1 = function(a,b,c,g){
 					if ($("#"+a[2]).find('#coin3').length === 0&&g != 2){
 						if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
 							var cami = trans(a[2])
+							var m = i+1
 							if ($("#"+cami[2]).find('img').length ===0){
 								$("#"+cami[2]).fadeOut(200).fadeIn(200);
 								$("#"+cami[2]).unbind('click')
@@ -956,10 +962,13 @@ var show1 = function(a,b,c,g){
 										$("#"+cami[2]).append(token1)
 										$('#'+cami[0]).empty();
 										$('#'+b).empty()
-										c.splice(c.length-1,1)
 										for (var sin in c){
-											$('#'+c[sin]).empty()
+											if (m > 0){
+												$('#'+c[sin]).empty()
+												m = m-1
+											}
 										}
+										i=0
 										$('#'+a[0]).unbind('click')}
 									$("#"+cami[1]).unbind('click')
 									$("#"+cami[0]).unbind('click')
@@ -983,6 +992,7 @@ var show1 = function(a,b,c,g){
 									}
 								})
 							}
+							i++
 							ra.push(cami[2])
 							var d = c
 							d.push(a[2])
@@ -998,6 +1008,7 @@ var show1 = function(a,b,c,g){
 					if ($("#"+a[a.length-1]).find('#coin4').length === 0&&g != 3){
 						if ($("#"+a[a.length-1]).find('#coin').length === 1||$("#"+a[a.length-1]).find('#coin3').length === 1){
 							var camo = trans(a[a.length-1])
+							var m = i+1
 							if ($("#"+camo[camo.length-1]).find('img').length ===0){
 								$("#"+camo[camo.length-1]).fadeOut(200).fadeIn(200);
 								$("#"+camo[camo.length-1]).unbind('click')
@@ -1006,10 +1017,13 @@ var show1 = function(a,b,c,g){
 										$("#"+camo[camo.length-1]).append(token2)
 										$('#'+camo[0]).empty();
 										$('#'+b).empty()
-										c.splice(c.length-1,1)
 										for (var sin in c){
-											$('#'+c[sin]).empty()
+											if (m > 0){
+												$('#'+c[sin]).empty()
+												m = m-1
+											}
 										}
+										i=0
 										$('#'+a[0]).unbind('click')}
 									$("#"+camo[camo.length-2]).unbind('click')
 									$("#"+camo[0]).unbind('click')
@@ -1033,6 +1047,7 @@ var show1 = function(a,b,c,g){
 									}
 								})
 							}
+							i++
 							ra.push(camo[camo.length-1])
 							var d = c
 							d.push(a[a.length-1])
@@ -1044,6 +1059,7 @@ var show1 = function(a,b,c,g){
 					if ($("#"+a[a.length-2]).find('#coin4').length === 0&&g != 4){
 						if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
 							var camu = trans(a[a.length-2])
+							var m = i+1
 							if ($("#"+camu[camu.length-2]).find('img').length ===0){
 								$("#"+camu[camu.length-2]).fadeOut(200).fadeIn(200);
 								$("#"+camu[camu.length-2]).unbind('click')
@@ -1052,10 +1068,13 @@ var show1 = function(a,b,c,g){
 										$("#"+camu[camu.length-2]).append(token2)
 										$('#'+camu[0]).empty();
 										$('#'+b).empty()
-										c.splice(c.length-1,1)
 										for (var sin in c){
-											$('#'+c[sin]).empty()
+											if (m > 0){
+												$('#'+c[sin]).empty()
+												m = m-1
+											}
 										}
+										i=0
 										$('#'+a[0]).unbind('click')}
 									$("#"+camu[camu.length-1]).unbind('click')
 									$("#"+camu[0]).unbind('click')
@@ -1079,6 +1098,7 @@ var show1 = function(a,b,c,g){
 									}
 								})
 							}
+							i++
 							ra.push(camu[camu.length-2])
 							var d = c
 							d.push(a[a.length-2])
@@ -1093,6 +1113,7 @@ var show1 = function(a,b,c,g){
 				if ($("#"+a[1]).find('#coin').length === 0&&g != 1){
 					if ($("#"+a[1]).find('#coin1').length === 1||$("#"+a[1]).find('#coin4').length === 1){
 						var cam1 = trans(a[1])
+						var m = i+1
 						if ($("#"+cam1[1]).find('img').length ===0){
 							$("#"+cam1[1]).fadeOut(200).fadeIn(200);
 							$("#"+cam1[1]).unbind('click')
@@ -1101,10 +1122,13 @@ var show1 = function(a,b,c,g){
 									$("#"+cam1[1]).append(token3)
 									$('#'+cam1[0]).empty();
 									$('#'+b).empty()
-									c.splice(c.length-1,1)
 									for (var sin in c){
-										$('#'+c[sin]).empty()
+										if (m > 0){
+											$('#'+c[sin]).empty()
+											m = m-1
+										}
 									}
+									i=0
 									$('#'+a[0]).unbind('click')}
 								$("#"+cam1[2]).unbind('click')
 								$("#"+cam1[0]).unbind('click')
@@ -1128,6 +1152,7 @@ var show1 = function(a,b,c,g){
 								}
 							})
 						}
+						i++
 						ra.push(cam1[1])
 						var d = c
 						d.push(a[1])
@@ -1137,6 +1162,7 @@ var show1 = function(a,b,c,g){
 				if ($("#"+a[2]).find('#coin').length === 0&&g != 2){
 					if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
 						var cami1 = trans(a[2])
+						var m = i+1
 						if ($("#"+cami1[2]).find('img').length ===0){
 							$("#"+cami1[2]).fadeOut(200).fadeIn(200);
 							$("#"+cami1[2]).unbind('click')
@@ -1145,10 +1171,13 @@ var show1 = function(a,b,c,g){
 									$("#"+cami1[2]).append(token3)
 									$('#'+cami1[0]).empty();
 									$('#'+b).empty()
-									c.splice(c.length-1,1)
 									for (var sin in c){
-										$('#'+c[sin]).empty()
+										if (m > 0){
+											$('#'+c[sin]).empty()
+											m = m-1
+										}
 									}
+									i=0
 									$('#'+a[0]).unbind('click')}
 								$("#"+cami1[1]).unbind('click')
 								$("#"+cami1[0]).unbind('click')
@@ -1172,6 +1201,7 @@ var show1 = function(a,b,c,g){
 								}
 							})
 						}
+						i++
 						ra.push(cami1[2])
 						var d = c
 						d.push(a[2])
@@ -1181,6 +1211,7 @@ var show1 = function(a,b,c,g){
 				if ($("#"+a[a.length-1]).find('#coin').length === 0&&g != 3){
 					if ($("#"+a[a.length-1]).find('#coin1').length === 1||$("#"+a[a.length-1]).find('#coin4').length === 1){
 						var camo1 = trans(a[a.length-1])
+						var m = i+1
 						if ($("#"+camo1[camo1.length-1]).find('img').length ===0){
 							$("#"+camo1[camo1.length-1]).fadeOut(200).fadeIn(200);
 							$("#"+camo1[camo1.length-1]).unbind('click')
@@ -1189,10 +1220,13 @@ var show1 = function(a,b,c,g){
 									$("#"+camo1[camo1.length-1]).append(token3)
 									$('#'+camo1[0]).empty();
 									$('#'+b).empty()
-									c.splice(c.length-1,1)
 									for (var sin in c){
-										$('#'+c[sin]).empty()
+										if (m > 0){
+											$('#'+c[sin]).empty()
+											m = m-1
+										}
 									}
+									i=0
 									$('#'+a[0]).unbind('click')}
 								$("#"+camo1[camo1.length-2]).unbind('click')
 								$("#"+camo1[0]).unbind('click')
@@ -1216,6 +1250,7 @@ var show1 = function(a,b,c,g){
 								}
 							})
 						}
+						i++
 						ra.push(camo1[camo1.length-1])
 						var d = c
 						d.push(a[a.length-1])
@@ -1225,6 +1260,7 @@ var show1 = function(a,b,c,g){
 				if ($("#"+a[a.length-2]).find('#coin').length === 0&&g != 4){
 					if ($("#"+a[a.length-2]).find('#coin1').length === 1||$("#"+a[a.length-2]).find('#coin4').length === 1){
 						var camu1 = trans(a[a.length-2])
+						var m = i+1
 						if ($("#"+camu1[camu1.length-2]).find('img').length ===0){
 							$("#"+camu1[camu1.length-2]).fadeOut(200).fadeIn(200);
 							$("#"+camu1[camu1.length-2]).unbind('click')
@@ -1233,10 +1269,13 @@ var show1 = function(a,b,c,g){
 									$("#"+camu1[camu1.length-2]).append(token3)
 									$('#'+camu1[0]).empty();
 									$('#'+b).empty()
-									c.splice(c.length-1,1)
 									for (var sin in c){
-										$('#'+c[sin]).empty()
+										if (m > 0){
+											$('#'+c[sin]).empty()
+											m = m-1
+										}
 									}
+									i=0
 									$('#'+a[0]).unbind('click')}
 								$("#"+camu1[camu1.length-1]).unbind('click')
 								$("#"+camu1[0]).unbind('click')
@@ -1260,6 +1299,7 @@ var show1 = function(a,b,c,g){
 								}
 							})
 						}
+						i++
 						ra.push(camu1[camu1.length-2])
 						var d = c
 						d.push(a[a.length-2])
@@ -1273,6 +1313,7 @@ var show1 = function(a,b,c,g){
 				if ($("#"+a[1]).find('#coin1').length === 0&&g != 1){
 					if ($("#"+a[1]).find('#coin').length === 1||$("#"+a[1]).find('#coin3').length === 1){
 						var cam2 = trans(a[1])
+						var m = i+1
 						if ($("#"+cam2[1]).find('img').length ===0){
 							$("#"+cam2[1]).fadeOut(200).fadeIn(200);
 							$("#"+cam2[1]).unbind('click')
@@ -1281,10 +1322,13 @@ var show1 = function(a,b,c,g){
 									$("#"+cam2[1]).append(token4)
 									$('#'+cam2[0]).empty();
 									$('#'+b).empty()
-									c.splice(c.length-1,1)
 									for (var sin in c){
-										$('#'+c[sin]).empty()
+										if (m > 0){
+											$('#'+c[sin]).empty()
+											m = m-1
+										}
 									}
+									i=0
 									$('#'+a[0]).unbind('click')}
 								$("#"+cam2[2]).unbind('click')
 								$("#"+cam2[0]).unbind('click')
@@ -1308,6 +1352,7 @@ var show1 = function(a,b,c,g){
 								}
 							})
 						}
+						i++
 						ra.push(cam2[1])
 						var d = c
 						d.push(a[1])
@@ -1317,6 +1362,7 @@ var show1 = function(a,b,c,g){
 				if ($("#"+a[2]).find('#coin1').length === 0&&g != 2){
 					if ($("#"+a[2]).find('#coin').length === 1||$("#"+a[2]).find('#coin3').length === 1){
 						var cami2 = trans(a[2])
+						var m = i+1
 						if ($("#"+cami2[2]).find('img').length ===0){
 							$("#"+cami2[2]).fadeOut(200).fadeIn(200);
 							$("#"+cami2[2]).unbind('click')
@@ -1325,10 +1371,13 @@ var show1 = function(a,b,c,g){
 									$("#"+cami2[2]).append(token4)
 									$('#'+cami2[0]).empty();
 									$('#'+b).empty()
-									c.splice(c.length-1,1)
 									for (var sin in c){
-										$('#'+c[sin]).empty()
+										if (m > 0){
+											$('#'+c[sin]).empty()
+											m = m-1
+										}
 									}
+									i=0
 									$('#'+a[0]).unbind('click')}
 								$("#"+cami2[1]).unbind('click')
 								$("#"+cami2[0]).unbind('click')
@@ -1352,6 +1401,7 @@ var show1 = function(a,b,c,g){
 								}
 							})
 						}
+						i++
 						ra.push(cami2[2])
 						var d = c
 						d.push(a[2])
@@ -1361,6 +1411,7 @@ var show1 = function(a,b,c,g){
 				if ($("#"+a[a.length-1]).find('#coin1').length === 0&&g != 3){
 					if ($("#"+a[a.length-1]).find('#coin').length === 1||$("#"+a[a.length-1]).find('#coin3').length === 1){
 						var camo2 = trans(a[a.length-1])
+						var m = i+1
 						if ($("#"+camo2[camo2.length-1]).find('img').length ===0){
 							$("#"+camo2[camo2.length-1]).fadeOut(200).fadeIn(200);
 							$("#"+camo2[camo2.length-1]).unbind('click')
@@ -1369,10 +1420,13 @@ var show1 = function(a,b,c,g){
 									$("#"+camo2[camo2.length-1]).append(token4)
 									$('#'+camo2[0]).empty();
 									$('#'+b).empty()
-									c.splice(c.length-1,1)
 									for (var sin in c){
-										$('#'+c[sin]).empty()
+										if (m > 0){
+											$('#'+c[sin]).empty()
+											m = m-1
+										}
 									}
+									i=0
 									$('#'+a[0]).unbind('click')}
 								$("#"+camo2[camo2.length-2]).unbind('click')
 								$("#"+camo2[0]).unbind('click')
@@ -1396,6 +1450,7 @@ var show1 = function(a,b,c,g){
 								}
 							})
 						}
+						i++
 						ra.push(camo2[camo2.length-1])
 						var d = c
 						d.push(a[a.length-1])
@@ -1405,6 +1460,7 @@ var show1 = function(a,b,c,g){
 				if ($("#"+a[a.length-2]).find('#coin1').length === 0&&g != 4){
 					if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
 						var camu2 = trans(a[a.length-2])
+						var m = i+1
 						if ($("#"+camu2[camu2.length-2]).find('img').length ===0){
 							$("#"+camu2[camu2.length-2]).fadeOut(200).fadeIn(200);
 							$("#"+camu2[camu2.length-2]).unbind('click')
@@ -1413,10 +1469,13 @@ var show1 = function(a,b,c,g){
 									$("#"+camu2[camu2.length-2]).append(token4)
 									$('#'+camu2[0]).empty();
 									$('#'+b).empty()
-									c.splice(c.length-1,1)
 									for (var sin in c){
-										$('#'+c[sin]).empty()
+										if (m > 0){
+											$('#'+c[sin]).empty()
+											m = m-1
+										}
 									}
+									i=0
 									$('#'+a[0]).unbind('click')}
 								$("#"+camu2[camu2.length-1]).unbind('click')
 								$("#"+camu2[0]).unbind('click')
@@ -1440,6 +1499,7 @@ var show1 = function(a,b,c,g){
 								}
 							})
 						}
+						i++
 						ra.push(camu2[camu2.length-2])
 						var d = c
 						d.push(a[a.length-2])
