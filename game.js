@@ -888,235 +888,35 @@ var show = function(a){
 
 //Recursive function
 var ra = []
-var i = 0
+
 
 var show1 = function(a,b,c){
 	var token1 = new Player();
 	var token2 = new Player1();
 	var token3 = new Player3();
 	var token4 = new Player4();
-	if (i<3){
-		if ($('#'+b).find('img').length > 0){
-			if ($('#'+b).find('#coin').length > 0){
-				if (o === 0){
-					if ($("#"+a[1]).find('#coin').length === 0){
-						if ($("#"+a[1]).find('#coin3').length === 0){
-							if ($("#"+a[1]).find('#coin1').length === 1||$("#"+a[1]).find('#coin4').length === 1){
-								var cam = trans(a[1])
-								if ($("#"+cam[1]).find('img').length ===0){
-									$("#"+cam[1]).fadeOut(200).fadeIn(200);
-									$("#"+cam[1]).unbind('click')
-									$("#"+cam[1]).click(function(){
-										if ($("#"+cam[1]).find('img').length === 0){
-											$("#"+cam[1]).append(token1)
-											$('#'+cam[0]).empty();
-											$('#'+b).empty()
-											c.splice(c.length-1,1)
-											for (var sin in c){
-												$('#'+c[sin]).empty()
-											}
-											$('#'+a[0]).unbind('click')}
-										$("#"+cam[2]).unbind('click')
-										$("#"+cam[0]).unbind('click')
-										for (var z in ra){
-											$('#'+ra[z]).unbind('click')
-										}
-										ra = []
-										for (var e in r){
-											r[e].unbind('click')
-										}
-										r = []
-										if (o === 0){
-											o=1
-										}
-										yellowscore = yellowscore+2
-										$('#scorey').empty()
-										$('#scorey').append('Yellow<br>'+yellowscore)
-										verify()
-										if (tokensPos(blue).length === 0){
-											alert('Yellow wins!!!')
-										}
-										i = 0
-									})
-								}
-								ra.push(cam[1])
-								var d = c
-								d.push(a[1])
-								i++
-								show1(trans(cam[1]),b,d)
-							}
-						}
-					}
-					if ($("#"+a[2]).find('#coin').length === 0){
-						if ($("#"+a[2]).find('#coin3').length === 0){
-							if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
-								var cami = trans(a[2])
-								if ($("#"+cami[2]).find('img').length ===0){
-									$("#"+cami[2]).fadeOut(200).fadeIn(200);
-									$("#"+cami[2]).unbind('click')
-									$("#"+cami[2]).click(function(){
-										if ($("#"+cami[2]).find('img').length === 0){
-											$("#"+cami[2]).append(token1)
-											$('#'+cami[0]).empty();
-											$('#'+b).empty()
-											c.splice(c.length-1,1)
-											for (var sin in c){
-												$('#'+c[sin]).empty()
-											}
-											$('#'+a[0]).unbind('click')}
-										$("#"+cami[1]).unbind('click')
-										$("#"+cami[0]).unbind('click')
-										for (var z in ra){
-											$('#'+ra[z]).unbind('click')
-										}
-										ra = []
-										for (var e in r){
-											r[e].unbind('click')
-										}
-										r = []
-										if (o === 0){
-											o=1
-										}
-										yellowscore = yellowscore+2
-										$('#scorey').empty()
-										$('#scorey').append('Yellow<br>'+yellowscore)
-										verify()
-										if (tokensPos(blue).length === 0){
-											alert('Yellow wins!!!')
-										}
-										i = 0
-									})
-								}
-								ra.push(cami[2])
-								var d = c
-								d.push(a[2])
-								i++ 
-								show1(trans(cami[2]),b,d)
-							}
-						}
-					}
-				}
-			}
-			if ($('#'+b).find('#coin1').length > 0){
-				if (o > 0){
-					if ($("#"+a[a.length-1]).find('#coin1').length === 0){
-						if ($("#"+a[a.length-1]).find('#coin4').length === 0){
-							if ($("#"+a[a.length-1]).find('#coin').length === 1||$("#"+a[a.length-1]).find('#coin3').length === 1){
-								var camo = trans(a[a.length-1])
-								if ($("#"+camo[camo.length-1]).find('img').length ===0){
-									$("#"+camo[camo.length-1]).fadeOut(200).fadeIn(200);
-									$("#"+camo[camo.length-1]).unbind('click')
-									$("#"+camo[camo.length-1]).click(function(){
-										if ($("#"+camo[camo.length-1]).find('img').length === 0){
-											$("#"+camo[camo.length-1]).append(token2)
-											$('#'+camo[0]).empty();
-											$('#'+b).empty()
-											c.splice(c.length-1,1)
-											for (var sin in c){
-												$('#'+c[sin]).empty()
-											}
-											$('#'+a[0]).unbind('click')}
-										$("#"+camo[camo.length-2]).unbind('click')
-										$("#"+camo[0]).unbind('click')
-										for (var z in ra){
-											$('#'+ra[z]).unbind('click')
-										}
-										ra = []
-										for (var e in r){
-											r[e].unbind('click')
-										}
-										r = []
-										if (o === 1){
-											o=0
-										}
-										bluescore = bluescore+2
-										$('#scoreb').empty()
-										$('#scoreb').append('Blue<br>'+bluescore)
-										verify()
-										if (tokensPos(yellow).length === 0){
-											alert('Blue wins!!!')
-										}
-										i = 0
-									})
-								}
-								ra.push(camo[camo.length-1])
-								var d = c
-								d.push(a[a.length-1])
-								i++
-								show1(trans(camo[camo.length-1]),b,d)
-							}
-						}
-					}
-					if ($("#"+a[a.length-2]).find('#coin1').length === 0){
-						if ($("#"+a[a.length-2]).find('#coin4').length === 0){
-							if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
-								var camu = trans(a[a.length-2])
-								if ($("#"+camu[camu.length-2]).find('img').length ===0){
-									$("#"+camu[camu.length-2]).fadeOut(200).fadeIn(200);
-									$("#"+camu[camu.length-2]).unbind('click')
-									$("#"+camu[camu.length-2]).click(function(){
-										if ($("#"+camu[camu.length-2]).find('img').length === 0){
-											$("#"+camu[camu.length-2]).append(token2)
-											$('#'+camu[0]).empty();
-											$('#'+b).empty()
-											c.splice(c.length-1,1)
-											for (var sin in c){
-												$('#'+c[sin]).empty()
-											}
-											$('#'+a[0]).unbind('click')}
-										$("#"+camu[camu.length-1]).unbind('click')
-										$("#"+camu[0]).unbind('click')
-										for (var z in ra){
-											$('#'+ra[z]).unbind('click')
-										}
-										ra = []
-										for (var e in r){
-											r[e].unbind('click')
-										}
-										r = []
-										if (o === 1){
-											o=0
-										}
-										bluescore = bluescore+2
-										$('#scoreb').empty()
-										$('#scoreb').append('Blue<br>'+bluescore)
-										verify()
-										if (tokensPos(yellow).length === 0){
-											alert('Blue wins!!!')
-										}
-										i = 0
-									})
-								}
-								ra.push(camu[camu.length-2])
-								var d = c
-								d.push(a[a.length-2])
-								i++
-								show1(trans(camu[camu.length-2]),b,d)
-							}
-						}
-					}
-				}
-			}
-			if ($('#'+b).find('#coin3').length > 0){
-				if (o === 0){
-					if ($("#"+a[1]).find('#coin').length === 0){
+	if ($('#'+b).find('img').length > 0){
+		if ($('#'+b).find('#coin').length > 0){
+			if (o === 0){
+				if ($("#"+a[1]).find('#coin').length === 0){
+					if ($("#"+a[1]).find('#coin3').length === 0){
 						if ($("#"+a[1]).find('#coin1').length === 1||$("#"+a[1]).find('#coin4').length === 1){
-							var cam1 = trans(a[1])
-							if ($("#"+cam1[1]).find('img').length ===0){
-								$("#"+cam1[1]).fadeOut(200).fadeIn(200);
-								$("#"+cam1[1]).unbind('click')
-								$("#"+cam1[1]).click(function(){
-									if ($("#"+cam1[1]).find('img').length === 0){
-										$("#"+cam1[1]).append(token3)
-										$('#'+cam1[0]).empty();
+							var cam = trans(a[1])
+							if ($("#"+cam[1]).find('img').length ===0){
+								$("#"+cam[1]).fadeOut(200).fadeIn(200);
+								$("#"+cam[1]).unbind('click')
+								$("#"+cam[1]).click(function(){
+									if ($("#"+cam[1]).find('img').length === 0){
+										$("#"+cam[1]).append(token1)
+										$('#'+cam[0]).empty();
 										$('#'+b).empty()
 										c.splice(c.length-1,1)
 										for (var sin in c){
 											$('#'+c[sin]).empty()
 										}
 										$('#'+a[0]).unbind('click')}
-									$("#"+cam1[2]).unbind('click')
-									$("#"+cam1[0]).unbind('click')
+									$("#"+cam[2]).unbind('click')
+									$("#"+cam[0]).unbind('click')
 									for (var z in ra){
 										$('#'+ra[z]).unbind('click')
 									}
@@ -1135,176 +935,34 @@ var show1 = function(a,b,c){
 									if (tokensPos(blue).length === 0){
 										alert('Yellow wins!!!')
 									}
-									i=0
 								})
 							}
-							ra.push(cam1[1])
+							ra.push(cam[1])
 							var d = c
 							d.push(a[1])
-							i++
-							show1(trans(cam1[1]),b,d)
-						}
-					}
-					if ($("#"+a[2]).find('#coin').length === 0){
-						if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
-							var cami1 = trans(a[2])
-							if ($("#"+cami1[2]).find('img').length ===0){
-								$("#"+cami1[2]).fadeOut(200).fadeIn(200);
-								$("#"+cami1[2]).unbind('click')
-								$("#"+cami1[2]).click(function(){
-									if ($("#"+cami1[2]).find('img').length === 0){
-										$("#"+cami1[2]).append(token3)
-										$('#'+cami1[0]).empty();
-										$('#'+b).empty()
-										c.splice(c.length-1,1)
-										for (var sin in c){
-											$('#'+c[sin]).empty()
-										}
-										$('#'+a[0]).unbind('click')}
-									$("#"+cami1[1]).unbind('click')
-									$("#"+cami1[0]).unbind('click')
-									for (var z in ra){
-										$('#'+ra[z]).unbind('click')
-									}
-									ra = []
-									for (var e in r){
-										r[e].unbind('click')
-									}
-									r = []
-									if (o === 0){
-										o=1
-									}
-									yellowscore = yellowscore+2
-									$('#scorey').empty()
-									$('#scorey').append('Yellow<br>'+yellowscore)
-									verify()
-									if (tokensPos(blue).length === 0){
-										alert('Yellow wins!!!')
-									}
-									i=0
-								})
-							}
-							ra.push(cami1[2])
-							var d = c
-							d.push(a[2])
-							i++
-							show1(trans(cami1[2]),b,d)
-						}
-					}
-					if ($("#"+a[a.length-1]).find('#coin').length === 0){
-						if ($("#"+a[a.length-1]).find('#coin1').length === 1||$("#"+a[a.length-1]).find('#coin4').length === 1){
-							var camo1 = trans(a[a.length-1])
-							if ($("#"+camo1[camo1.length-1]).find('img').length ===0){
-								$("#"+camo1[camo1.length-1]).fadeOut(200).fadeIn(200);
-								$("#"+camo1[camo1.length-1]).unbind('click')
-								$("#"+camo1[camo1.length-1]).click(function(){
-									if ($("#"+camo1[camo1.length-1]).find('img').length === 0){
-										$("#"+camo1[camo1.length-1]).append(token3)
-										$('#'+camo1[0]).empty();
-										$('#'+b).empty()
-										c.splice(c.length-1,1)
-										for (var sin in c){
-											$('#'+c[sin]).empty()
-										}
-										$('#'+a[0]).unbind('click')}
-									$("#"+camo1[camo1.length-2]).unbind('click')
-									$("#"+camo1[0]).unbind('click')
-									for (var z in ra){
-										$('#'+ra[z]).unbind('click')
-									}
-									ra = []
-									for (var e in r){
-										r[e].unbind('click')
-									}
-									r = []
-									if (o === 0){
-										o=1
-									}
-									yellowscore = yellowscore+2
-									$('#scorey').empty()
-									$('#scorey').append('Yellow<br>'+yellowscore)
-									verify()
-									if (tokensPos(blue).length === 0){
-										alert('Yellow wins!!!')
-									}
-									i=0
-								})
-							}
-							ra.push(camo1[camo1.length-1])
-							var d = c
-							d.push(a[a.length-1])
-							i++
-							show1(trans(camo1[camo1.length-1]),b,d)
-						}
-					}
-					if ($("#"+a[a.length-2]).find('#coin').length === 0){
-						if ($("#"+a[a.length-2]).find('#coin1').length === 1||$("#"+a[a.length-2]).find('#coin4').length === 1){
-							var camu1 = trans(a[a.length-2])
-							if ($("#"+camu1[camu1.length-2]).find('img').length ===0){
-								$("#"+camu1[camu1.length-2]).fadeOut(200).fadeIn(200);
-								$("#"+camu1[camu1.length-2]).unbind('click')
-								$("#"+camu1[camu1.length-2]).click(function(){
-									if ($("#"+camu1[camu1.length-2]).find('img').length === 0){
-										$("#"+camu1[camu1.length-2]).append(token3)
-										$('#'+camu1[0]).empty();
-										$('#'+b).empty()
-										c.splice(c.length-1,1)
-										for (var sin in c){
-											$('#'+c[sin]).empty()
-										}
-										$('#'+a[0]).unbind('click')}
-									$("#"+camu1[camu1.length-1]).unbind('click')
-									$("#"+camu1[0]).unbind('click')
-									for (var z in ra){
-										$('#'+ra[z]).unbind('click')
-									}
-									ra = []
-									for (var e in r){
-										r[e].unbind('click')
-									}
-									r = []
-									if (o === 0){
-										o=1
-									}
-									yellowscore = yellowscore+2
-									$('#scorey').empty()
-									$('#scorey').append('Yellow<br>'+yellowscore)
-									verify()
-									if (tokensPos(blue).length === 0){
-										alert('Yellow wins!!!')
-									}
-									i=0
-								})
-							}
-							ra.push(camu1[camu1.length-2])
-							var d = c
-							d.push(a[a.length-2])
-							i++
-							show1(trans(camu1[camu1.length-2]),b,d)
+							show1(trans(cam[1]),b,d)
 						}
 					}
 				}
-			}
-			if ($('#'+b).find('#coin4').length > 0){
-				if (o > 0){
-					if ($("#"+a[1]).find('#coin1').length === 0){
-						if ($("#"+a[1]).find('#coin').length === 1||$("#"+a[1]).find('#coin3').length === 1){
-							var cam2 = trans(a[1])
-							if ($("#"+cam2[1]).find('img').length ===0){
-								$("#"+cam2[1]).fadeOut(200).fadeIn(200);
-								$("#"+cam2[1]).unbind('click')
-								$("#"+cam2[1]).click(function(){
-									if ($("#"+cam2[1]).find('img').length === 0){
-										$("#"+cam2[1]).append(token4)
-										$('#'+cam2[0]).empty();
+				if ($("#"+a[2]).find('#coin').length === 0){
+					if ($("#"+a[2]).find('#coin3').length === 0){
+						if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
+							var cami = trans(a[2])
+							if ($("#"+cami[2]).find('img').length ===0){
+								$("#"+cami[2]).fadeOut(200).fadeIn(200);
+								$("#"+cami[2]).unbind('click')
+								$("#"+cami[2]).click(function(){
+									if ($("#"+cami[2]).find('img').length === 0){
+										$("#"+cami[2]).append(token1)
+										$('#'+cami[0]).empty();
 										$('#'+b).empty()
 										c.splice(c.length-1,1)
 										for (var sin in c){
 											$('#'+c[sin]).empty()
 										}
 										$('#'+a[0]).unbind('click')}
-									$("#"+cam2[2]).unbind('click')
-									$("#"+cam2[0]).unbind('click')
+									$("#"+cami[1]).unbind('click')
+									$("#"+cami[0]).unbind('click')
 									for (var z in ra){
 										$('#'+ra[z]).unbind('click')
 									}
@@ -1313,173 +971,488 @@ var show1 = function(a,b,c){
 										r[e].unbind('click')
 									}
 									r = []
-									if (o === 1){
-										o=0
+									if (o === 0){
+										o=1
 									}
-									bluescore = bluescore+2
-									$('#scoreb').empty()
-									$('#scoreb').append('Blue<br>'+bluescore)
+									yellowscore = yellowscore+2
+									$('#scorey').empty()
+									$('#scorey').append('Yellow<br>'+yellowscore)
 									verify()
-									if (tokensPos(yellow).length === 0){
-										alert('Blue wins!!!')
+									if (tokensPos(blue).length === 0){
+										alert('Yellow wins!!!')
 									}
-									i=0
 								})
 							}
-							ra.push(cam2[1])
-							var d = c
-							d.push(a[1])
-							i++
-							show1(trans(cam2[1]),b,d)
-						}
-					}
-					if ($("#"+a[2]).find('#coin1').length === 0){
-						if ($("#"+a[2]).find('#coin').length === 1||$("#"+a[2]).find('#coin3').length === 1){
-							var cami2 = trans(a[2])
-							if ($("#"+cami2[2]).find('img').length ===0){
-								$("#"+cami2[2]).fadeOut(200).fadeIn(200);
-								$("#"+cami2[2]).unbind('click')
-								$("#"+cami2[2]).click(function(){
-									if ($("#"+cami2[2]).find('img').length === 0){
-										$("#"+cami2[2]).append(token4)
-										$('#'+cami2[0]).empty();
-										$('#'+b).empty()
-										c.splice(c.length-1,1)
-										for (var sin in c){
-											$('#'+c[sin]).empty()
-										}
-										$('#'+a[0]).unbind('click')}
-									$("#"+cami2[1]).unbind('click')
-									$("#"+cami2[0]).unbind('click')
-									for (var z in ra){
-										$('#'+ra[z]).unbind('click')
-									}
-									ra = []
-									for (var e in r){
-										r[e].unbind('click')
-									}
-									r = []
-									if (o === 1){
-										o=0
-									}
-									bluescore = bluescore+2
-									$('#scoreb').empty()
-									$('#scoreb').append('Blue<br>'+bluescore)
-									verify()
-									if (tokensPos(yellow).length === 0){
-										alert('Blue wins!!!')
-									}
-									i=0
-								})
-							}
-							ra.push(cami2[2])
+							ra.push(cami[2])
 							var d = c
 							d.push(a[2])
-							i++
-							show1(trans(cami2[2]),b,d)
-						}
-					}
-					if ($("#"+a[a.length-1]).find('#coin1').length === 0){
-						if ($("#"+a[a.length-1]).find('#coin').length === 1||$("#"+a[a.length-1]).find('#coin3').length === 1){
-							var camo2 = trans(a[a.length-1])
-							if ($("#"+camo2[camo2.length-1]).find('img').length ===0){
-								$("#"+camo2[camo2.length-1]).fadeOut(200).fadeIn(200);
-								$("#"+camo2[camo2.length-1]).unbind('click')
-								$("#"+camo2[camo2.length-1]).click(function(){
-									if ($("#"+camo2[camo2.length-1]).find('img').length === 0){
-										$("#"+camo2[camo2.length-1]).append(token4)
-										$('#'+camo2[0]).empty();
-										$('#'+b).empty()
-										c.splice(c.length-1,1)
-										for (var sin in c){
-											$('#'+c[sin]).empty()
-										}
-										$('#'+a[0]).unbind('click')}
-									$("#"+camo2[camo2.length-2]).unbind('click')
-									$("#"+camo2[0]).unbind('click')
-									for (var z in ra){
-										$('#'+ra[z]).unbind('click')
-									}
-									ra = []
-									for (var e in r){
-										r[e].unbind('click')
-									}
-									r = []
-									if (o === 1){
-										o=0
-									}
-									bluescore = bluescore+2
-									$('#scoreb').empty()
-									$('#scoreb').append('Blue<br>'+bluescore)
-									verify()
-									if (tokensPos(yellow).length === 0){
-										alert('Blue wins!!!')
-									}
-									i=0
-								})
-							}
-							ra.push(camo2[camo2.length-1])
-							var d = c
-							d.push(a[a.length-1])
-							i++
-							show1(trans(camo2[camo2.length-1]),b,d)
-						}
-					}
-					if ($("#"+a[a.length-2]).find('#coin1').length === 0){
-						if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
-							var camu2 = trans(a[a.length-2])
-							if ($("#"+camu2[camu2.length-2]).find('img').length ===0){
-								$("#"+camu2[camu2.length-2]).fadeOut(200).fadeIn(200);
-								$("#"+camu2[camu2.length-2]).unbind('click')
-								$("#"+camu2[camu2.length-2]).click(function(){
-									if ($("#"+camu2[camu2.length-2]).find('img').length === 0){
-										$("#"+camu2[camu2.length-2]).append(token4)
-										$('#'+camu2[0]).empty();
-										$('#'+b).empty()
-										c.splice(c.length-1,1)
-										for (var sin in c){
-											$('#'+c[sin]).empty()
-										}
-										$('#'+a[0]).unbind('click')}
-									$("#"+camu2[camu2.length-1]).unbind('click')
-									$("#"+camu2[0]).unbind('click')
-									for (var z in ra){
-										$('#'+ra[z]).unbind('click')
-									}
-									ra = []
-									for (var e in r){
-										r[e].unbind('click')
-									}
-									r = []
-									if (o === 1){
-										o=0
-									}
-									bluescore = bluescore+2
-									$('#scoreb').empty()
-									$('#scoreb').append('Blue<br>'+bluescore)
-									verify()
-									if (tokensPos(yellow).length === 0){
-										alert('Blue wins!!!')
-									}
-									i=0
-								})
-							}
-							ra.push(camu2[camu2.length-2])
-							var d = c
-							d.push(a[a.length-2])
-							i++
-							show1(trans(camu2[camu2.length-2]),b,d)
+							show1(trans(cami[2]),b,d)
 						}
 					}
 				}
 			}
 		}
-		r.push($("#"+a[1]))
-		r.push($("#"+a[2]))
-		r.push($("#"+a[a.length-2]))
-		r.push($("#"+a[a.length-1]))
-		i = 0
+		if ($('#'+b).find('#coin1').length > 0){
+			if (o > 0){
+				if ($("#"+a[a.length-1]).find('#coin1').length === 0){
+					if ($("#"+a[a.length-1]).find('#coin4').length === 0){
+						if ($("#"+a[a.length-1]).find('#coin').length === 1||$("#"+a[a.length-1]).find('#coin3').length === 1){
+							var camo = trans(a[a.length-1])
+							if ($("#"+camo[camo.length-1]).find('img').length ===0){
+								$("#"+camo[camo.length-1]).fadeOut(200).fadeIn(200);
+								$("#"+camo[camo.length-1]).unbind('click')
+								$("#"+camo[camo.length-1]).click(function(){
+									if ($("#"+camo[camo.length-1]).find('img').length === 0){
+										$("#"+camo[camo.length-1]).append(token2)
+										$('#'+camo[0]).empty();
+										$('#'+b).empty()
+										c.splice(c.length-1,1)
+										for (var sin in c){
+											$('#'+c[sin]).empty()
+										}
+										$('#'+a[0]).unbind('click')}
+									$("#"+camo[camo.length-2]).unbind('click')
+									$("#"+camo[0]).unbind('click')
+									for (var z in ra){
+										$('#'+ra[z]).unbind('click')
+									}
+									ra = []
+									for (var e in r){
+										r[e].unbind('click')
+									}
+									r = []
+									if (o === 1){
+										o=0
+									}
+									bluescore = bluescore+2
+									$('#scoreb').empty()
+									$('#scoreb').append('Blue<br>'+bluescore)
+									verify()
+									if (tokensPos(yellow).length === 0){
+										alert('Blue wins!!!')
+									}
+								})
+							}
+							ra.push(camo[camo.length-1])
+							var d = c
+							d.push(a[a.length-1])
+							show1(trans(camo[camo.length-1]),b,d)
+						}
+					}
+				}
+				if ($("#"+a[a.length-2]).find('#coin1').length === 0){
+					if ($("#"+a[a.length-2]).find('#coin4').length === 0){
+						if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
+							var camu = trans(a[a.length-2])
+							if ($("#"+camu[camu.length-2]).find('img').length ===0){
+								$("#"+camu[camu.length-2]).fadeOut(200).fadeIn(200);
+								$("#"+camu[camu.length-2]).unbind('click')
+								$("#"+camu[camu.length-2]).click(function(){
+									if ($("#"+camu[camu.length-2]).find('img').length === 0){
+										$("#"+camu[camu.length-2]).append(token2)
+										$('#'+camu[0]).empty();
+										$('#'+b).empty()
+										c.splice(c.length-1,1)
+										for (var sin in c){
+											$('#'+c[sin]).empty()
+										}
+										$('#'+a[0]).unbind('click')}
+									$("#"+camu[camu.length-1]).unbind('click')
+									$("#"+camu[0]).unbind('click')
+									for (var z in ra){
+										$('#'+ra[z]).unbind('click')
+									}
+									ra = []
+									for (var e in r){
+										r[e].unbind('click')
+									}
+									r = []
+									if (o === 1){
+										o=0
+									}
+									bluescore = bluescore+2
+									$('#scoreb').empty()
+									$('#scoreb').append('Blue<br>'+bluescore)
+									verify()
+									if (tokensPos(yellow).length === 0){
+										alert('Blue wins!!!')
+									}
+								})
+							}
+							ra.push(camu[camu.length-2])
+							var d = c
+							d.push(a[a.length-2])
+							show1(trans(camu[camu.length-2]),b,d)
+						}
+					}
+				}
+			}
+		}
+		if ($('#'+b).find('#coin3').length > 0){
+			if (o === 0){
+				if ($("#"+a[1]).find('#coin').length === 0){
+					if ($("#"+a[1]).find('#coin1').length === 1||$("#"+a[1]).find('#coin4').length === 1){
+						var cam1 = trans(a[1])
+						if ($("#"+cam1[1]).find('img').length ===0){
+							$("#"+cam1[1]).fadeOut(200).fadeIn(200);
+							$("#"+cam1[1]).unbind('click')
+							$("#"+cam1[1]).click(function(){
+								if ($("#"+cam1[1]).find('img').length === 0){
+									$("#"+cam1[1]).append(token3)
+									$('#'+cam1[0]).empty();
+									$('#'+b).empty()
+									c.splice(c.length-1,1)
+									for (var sin in c){
+										$('#'+c[sin]).empty()
+									}
+									$('#'+a[0]).unbind('click')}
+								$("#"+cam1[2]).unbind('click')
+								$("#"+cam1[0]).unbind('click')
+								for (var z in ra){
+									$('#'+ra[z]).unbind('click')
+								}
+								ra = []
+								for (var e in r){
+									r[e].unbind('click')
+								}
+								r = []
+								if (o === 0){
+									o=1
+								}
+								yellowscore = yellowscore+2
+								$('#scorey').empty()
+								$('#scorey').append('Yellow<br>'+yellowscore)
+								verify()
+								if (tokensPos(blue).length === 0){
+									alert('Yellow wins!!!')
+								}
+							})
+						}
+						ra.push(cam1[1])
+						var d = c
+						d.push(a[1])
+						show1(trans(cam1[1]),b,d)
+					}
+				}
+				if ($("#"+a[2]).find('#coin').length === 0){
+					if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
+						var cami1 = trans(a[2])
+						if ($("#"+cami1[2]).find('img').length ===0){
+							$("#"+cami1[2]).fadeOut(200).fadeIn(200);
+							$("#"+cami1[2]).unbind('click')
+							$("#"+cami1[2]).click(function(){
+								if ($("#"+cami1[2]).find('img').length === 0){
+									$("#"+cami1[2]).append(token3)
+									$('#'+cami1[0]).empty();
+									$('#'+b).empty()
+									c.splice(c.length-1,1)
+									for (var sin in c){
+										$('#'+c[sin]).empty()
+									}
+									$('#'+a[0]).unbind('click')}
+								$("#"+cami1[1]).unbind('click')
+								$("#"+cami1[0]).unbind('click')
+								for (var z in ra){
+									$('#'+ra[z]).unbind('click')
+								}
+								ra = []
+								for (var e in r){
+									r[e].unbind('click')
+								}
+								r = []
+								if (o === 0){
+									o=1
+								}
+								yellowscore = yellowscore+2
+								$('#scorey').empty()
+								$('#scorey').append('Yellow<br>'+yellowscore)
+								verify()
+								if (tokensPos(blue).length === 0){
+									alert('Yellow wins!!!')
+								}
+							})
+						}
+						ra.push(cami1[2])
+						var d = c
+						d.push(a[2])
+						show1(trans(cami1[2]),b,d)
+					}
+				}
+				if ($("#"+a[a.length-1]).find('#coin').length === 0){
+					if ($("#"+a[a.length-1]).find('#coin1').length === 1||$("#"+a[a.length-1]).find('#coin4').length === 1){
+						var camo1 = trans(a[a.length-1])
+						if ($("#"+camo1[camo1.length-1]).find('img').length ===0){
+							$("#"+camo1[camo1.length-1]).fadeOut(200).fadeIn(200);
+							$("#"+camo1[camo1.length-1]).unbind('click')
+							$("#"+camo1[camo1.length-1]).click(function(){
+								if ($("#"+camo1[camo1.length-1]).find('img').length === 0){
+									$("#"+camo1[camo1.length-1]).append(token3)
+									$('#'+camo1[0]).empty();
+									$('#'+b).empty()
+									c.splice(c.length-1,1)
+									for (var sin in c){
+										$('#'+c[sin]).empty()
+									}
+									$('#'+a[0]).unbind('click')}
+								$("#"+camo1[camo1.length-2]).unbind('click')
+								$("#"+camo1[0]).unbind('click')
+								for (var z in ra){
+									$('#'+ra[z]).unbind('click')
+								}
+								ra = []
+								for (var e in r){
+									r[e].unbind('click')
+								}
+								r = []
+								if (o === 0){
+									o=1
+								}
+								yellowscore = yellowscore+2
+								$('#scorey').empty()
+								$('#scorey').append('Yellow<br>'+yellowscore)
+								verify()
+								if (tokensPos(blue).length === 0){
+									alert('Yellow wins!!!')
+								}
+							})
+						}
+						ra.push(camo1[camo1.length-1])
+						var d = c
+						d.push(a[a.length-1])
+						show1(trans(camo1[camo1.length-1]),b,d)
+					}
+				}
+				if ($("#"+a[a.length-2]).find('#coin').length === 0){
+					if ($("#"+a[a.length-2]).find('#coin1').length === 1||$("#"+a[a.length-2]).find('#coin4').length === 1){
+						var camu1 = trans(a[a.length-2])
+						if ($("#"+camu1[camu1.length-2]).find('img').length ===0){
+							$("#"+camu1[camu1.length-2]).fadeOut(200).fadeIn(200);
+							$("#"+camu1[camu1.length-2]).unbind('click')
+							$("#"+camu1[camu1.length-2]).click(function(){
+								if ($("#"+camu1[camu1.length-2]).find('img').length === 0){
+									$("#"+camu1[camu1.length-2]).append(token3)
+									$('#'+camu1[0]).empty();
+									$('#'+b).empty()
+									c.splice(c.length-1,1)
+									for (var sin in c){
+										$('#'+c[sin]).empty()
+									}
+									$('#'+a[0]).unbind('click')}
+								$("#"+camu1[camu1.length-1]).unbind('click')
+								$("#"+camu1[0]).unbind('click')
+								for (var z in ra){
+									$('#'+ra[z]).unbind('click')
+								}
+								ra = []
+								for (var e in r){
+									r[e].unbind('click')
+								}
+								r = []
+								if (o === 0){
+									o=1
+								}
+								yellowscore = yellowscore+2
+								$('#scorey').empty()
+								$('#scorey').append('Yellow<br>'+yellowscore)
+								verify()
+								if (tokensPos(blue).length === 0){
+									alert('Yellow wins!!!')
+								}
+							})
+						}
+						ra.push(camu1[camu1.length-2])
+						var d = c
+						d.push(a[a.length-2])
+						show1(trans(camu1[camu1.length-2]),b,d)
+					}
+				}
+			}
+		}
+		if ($('#'+b).find('#coin4').length > 0){
+			if (o > 0){
+				if ($("#"+a[1]).find('#coin1').length === 0){
+					if ($("#"+a[1]).find('#coin').length === 1||$("#"+a[1]).find('#coin3').length === 1){
+						var cam2 = trans(a[1])
+						if ($("#"+cam2[1]).find('img').length ===0){
+							$("#"+cam2[1]).fadeOut(200).fadeIn(200);
+							$("#"+cam2[1]).unbind('click')
+							$("#"+cam2[1]).click(function(){
+								if ($("#"+cam2[1]).find('img').length === 0){
+									$("#"+cam2[1]).append(token4)
+									$('#'+cam2[0]).empty();
+									$('#'+b).empty()
+									c.splice(c.length-1,1)
+									for (var sin in c){
+										$('#'+c[sin]).empty()
+									}
+									$('#'+a[0]).unbind('click')}
+								$("#"+cam2[2]).unbind('click')
+								$("#"+cam2[0]).unbind('click')
+								for (var z in ra){
+									$('#'+ra[z]).unbind('click')
+								}
+								ra = []
+								for (var e in r){
+									r[e].unbind('click')
+								}
+								r = []
+								if (o === 1){
+									o=0
+								}
+								bluescore = bluescore+2
+								$('#scoreb').empty()
+								$('#scoreb').append('Blue<br>'+bluescore)
+								verify()
+								if (tokensPos(yellow).length === 0){
+									alert('Blue wins!!!')
+								}
+							})
+						}
+						ra.push(cam2[1])
+						var d = c
+						d.push(a[1])
+						show1(trans(cam2[1]),b,d)
+					}
+				}
+				if ($("#"+a[2]).find('#coin1').length === 0){
+					if ($("#"+a[2]).find('#coin').length === 1||$("#"+a[2]).find('#coin3').length === 1){
+						var cami2 = trans(a[2])
+						if ($("#"+cami2[2]).find('img').length ===0){
+							$("#"+cami2[2]).fadeOut(200).fadeIn(200);
+							$("#"+cami2[2]).unbind('click')
+							$("#"+cami2[2]).click(function(){
+								if ($("#"+cami2[2]).find('img').length === 0){
+									$("#"+cami2[2]).append(token4)
+									$('#'+cami2[0]).empty();
+									$('#'+b).empty()
+									c.splice(c.length-1,1)
+									for (var sin in c){
+										$('#'+c[sin]).empty()
+									}
+									$('#'+a[0]).unbind('click')}
+								$("#"+cami2[1]).unbind('click')
+								$("#"+cami2[0]).unbind('click')
+								for (var z in ra){
+									$('#'+ra[z]).unbind('click')
+								}
+								ra = []
+								for (var e in r){
+									r[e].unbind('click')
+								}
+								r = []
+								if (o === 1){
+									o=0
+								}
+								bluescore = bluescore+2
+								$('#scoreb').empty()
+								$('#scoreb').append('Blue<br>'+bluescore)
+								verify()
+								if (tokensPos(yellow).length === 0){
+									alert('Blue wins!!!')
+								}
+							})
+						}
+						ra.push(cami2[2])
+						var d = c
+						d.push(a[2])
+						show1(trans(cami2[2]),b,d)
+					}
+				}
+				if ($("#"+a[a.length-1]).find('#coin1').length === 0){
+					if ($("#"+a[a.length-1]).find('#coin').length === 1||$("#"+a[a.length-1]).find('#coin3').length === 1){
+						var camo2 = trans(a[a.length-1])
+						if ($("#"+camo2[camo2.length-1]).find('img').length ===0){
+							$("#"+camo2[camo2.length-1]).fadeOut(200).fadeIn(200);
+							$("#"+camo2[camo2.length-1]).unbind('click')
+							$("#"+camo2[camo2.length-1]).click(function(){
+								if ($("#"+camo2[camo2.length-1]).find('img').length === 0){
+									$("#"+camo2[camo2.length-1]).append(token4)
+									$('#'+camo2[0]).empty();
+									$('#'+b).empty()
+									c.splice(c.length-1,1)
+									for (var sin in c){
+										$('#'+c[sin]).empty()
+									}
+									$('#'+a[0]).unbind('click')}
+								$("#"+camo2[camo2.length-2]).unbind('click')
+								$("#"+camo2[0]).unbind('click')
+								for (var z in ra){
+									$('#'+ra[z]).unbind('click')
+								}
+								ra = []
+								for (var e in r){
+									r[e].unbind('click')
+								}
+								r = []
+								if (o === 1){
+									o=0
+								}
+								bluescore = bluescore+2
+								$('#scoreb').empty()
+								$('#scoreb').append('Blue<br>'+bluescore)
+								verify()
+								if (tokensPos(yellow).length === 0){
+									alert('Blue wins!!!')
+								}
+							})
+						}
+						ra.push(camo2[camo2.length-1])
+						var d = c
+						d.push(a[a.length-1])
+						show1(trans(camo2[camo2.length-1]),b,d)
+					}
+				}
+				if ($("#"+a[a.length-2]).find('#coin1').length === 0){
+					if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
+						var camu2 = trans(a[a.length-2])
+						if ($("#"+camu2[camu2.length-2]).find('img').length ===0){
+							$("#"+camu2[camu2.length-2]).fadeOut(200).fadeIn(200);
+							$("#"+camu2[camu2.length-2]).unbind('click')
+							$("#"+camu2[camu2.length-2]).click(function(){
+								if ($("#"+camu2[camu2.length-2]).find('img').length === 0){
+									$("#"+camu2[camu2.length-2]).append(token4)
+									$('#'+camu2[0]).empty();
+									$('#'+b).empty()
+									c.splice(c.length-1,1)
+									for (var sin in c){
+										$('#'+c[sin]).empty()
+									}
+									$('#'+a[0]).unbind('click')}
+								$("#"+camu2[camu2.length-1]).unbind('click')
+								$("#"+camu2[0]).unbind('click')
+								for (var z in ra){
+									$('#'+ra[z]).unbind('click')
+								}
+								ra = []
+								for (var e in r){
+									r[e].unbind('click')
+								}
+								r = []
+								if (o === 1){
+									o=0
+								}
+								bluescore = bluescore+2
+								$('#scoreb').empty()
+								$('#scoreb').append('Blue<br>'+bluescore)
+								verify()
+								if (tokensPos(yellow).length === 0){
+									alert('Blue wins!!!')
+								}
+							})
+						}
+						ra.push(camu2[camu2.length-2])
+						var d = c
+						d.push(a[a.length-2])
+						show1(trans(camu2[camu2.length-2]),b,d)
+					}
+				}
+			}
+		}
 	}
+	r.push($("#"+a[1]))
+	r.push($("#"+a[2]))
+	r.push($("#"+a[a.length-2]))
+	r.push($("#"+a[a.length-1]))
 }
 var blue = 'coin1',yellow = 'coin'
 var tokensPos = function(item){
