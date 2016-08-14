@@ -1,6 +1,7 @@
 var black = "<button id=%name% "
 var black1 = "onclick='show(%id%)' style='display:block; height: 64px; width: 80px; background: black; float:left'></button>"
-var white = "<button id=%name% style='display:block; height: 64px; width: 80px; background: red; float:left'></button>";
+var white = "<button id=%name% "
+var white1 = "style='display:block; height: 64px; width: 80px; background: red; float:left'></button>";
 var block = "<div style='display:block;  width: 80px; background: white; float:left'>%num%</div>";
 var block1 = "<br><div style='display:block;  width: 80px; background: white;'>%num%</div>";
 var reset = "<button id='start' onclick='start();change1();' style='float: left; height:40; color:green;'>Reset</button>"
@@ -34,13 +35,18 @@ var func1 = function(){
 	};
 	return c;
 }
+function randomChoice(arr) {
+    return arr[Math.floor(arr.length * Math.random())];
+}
+var colors = ['red','gray','blue','yellow','white','green','orange']
 var squares = function(){
 	var name = func();
 	var name1 = func1();
 	var n = 0;
+
 	for (var i = 0; i < 4;i++){
 		for (var a = 0; a < 4;a++){
-			$("#main").append(white.replace('%name%',name[n]));
+			$("#main").append(white.replace('%name%',name[n])+white1.replace('red',randomChoice(colors)));
 			n++;
 			$("#main").append(black.replace('%name%',name[n])+black1.replace('%id%',name1[n]));
 			n++;
@@ -48,7 +54,7 @@ var squares = function(){
 		for (var d = 0; d<4;d++){
 			$("#main").append(black.replace('%name%',name[n])+black1.replace('%id%',name1[n]));
 			n++;
-			$("#main").append(white.replace('%name%',name[n]));
+			$("#main").append(white.replace('%name%',name[n])+white1.replace('red',randomChoice(colors)));
 			n++;
 		};
 	};
