@@ -951,6 +951,7 @@ var show1 = function(a,b,c,g){
 						if ($("#"+a[1]).find('#coin1').length === 1||$("#"+a[1]).find('#coin4').length === 1){
 							var cam = trans(a[1])
 							var m = i+1
+							i=0
 							if ($("#"+cam[1]).find('img').length ===0){
 								$("#"+cam[1]).fadeOut(200).fadeIn(200);
 								$("#"+cam[1]).unbind('click')
@@ -992,7 +993,8 @@ var show1 = function(a,b,c,g){
 							i++
 							ra.push(cam[1])
 							var d = c
-							d.push(a[1])
+							if (d.indexOf(a[1]) === -1){
+								d.push(a[1])}
 							show1(trans(cam[1]),b,d,3)
 						}
 					}
@@ -1002,6 +1004,7 @@ var show1 = function(a,b,c,g){
 						if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
 							var cami = trans(a[2])
 							var m = i+1
+							i=0
 							if ($("#"+cami[2]).find('img').length ===0){
 								$("#"+cami[2]).fadeOut(200).fadeIn(200);
 								$("#"+cami[2]).unbind('click')
@@ -1043,7 +1046,8 @@ var show1 = function(a,b,c,g){
 							i++
 							ra.push(cami[2])
 							var d = c
-							d.push(a[2])
+							if (d.indexOf(a[2]) === -1){
+								d.push(a[2])}
 							show1(trans(cami[2]),b,d,4)
 						}
 					}
@@ -1057,6 +1061,7 @@ var show1 = function(a,b,c,g){
 						if ($("#"+a[a.length-1]).find('#coin').length === 1||$("#"+a[a.length-1]).find('#coin3').length === 1){
 							var camo = trans(a[a.length-1])
 							var m = i+1
+							i=0
 							if ($("#"+camo[camo.length-1]).find('img').length ===0){
 								$("#"+camo[camo.length-1]).fadeOut(200).fadeIn(200);
 								$("#"+camo[camo.length-1]).unbind('click')
@@ -1098,7 +1103,8 @@ var show1 = function(a,b,c,g){
 							i++
 							ra.push(camo[camo.length-1])
 							var d = c
-							d.push(a[a.length-1])
+							if (d.indexOf(a[a.length-1]) === -1){
+								d.push(a[a.length-1])}
 							show1(trans(camo[camo.length-1]),b,d,1)
 						}
 					}
@@ -1108,6 +1114,7 @@ var show1 = function(a,b,c,g){
 						if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
 							var camu = trans(a[a.length-2])
 							var m = i+1
+							i=0
 							if ($("#"+camu[camu.length-2]).find('img').length ===0){
 								$("#"+camu[camu.length-2]).fadeOut(200).fadeIn(200);
 								$("#"+camu[camu.length-2]).unbind('click')
@@ -1149,7 +1156,8 @@ var show1 = function(a,b,c,g){
 							i++
 							ra.push(camu[camu.length-2])
 							var d = c
-							d.push(a[a.length-2])
+							if (d.indexOf(a[a.length-2]) === -1){
+								d.push(a[a.length-2])}
 							show1(trans(camu[camu.length-2]),b,d,2)
 						}
 					}
@@ -1162,6 +1170,7 @@ var show1 = function(a,b,c,g){
 					if ($("#"+a[1]).find('#coin1').length === 1||$("#"+a[1]).find('#coin4').length === 1){
 						var cam1 = trans(a[1])
 						var m = i+1
+						i=0
 						if ($("#"+cam1[1]).find('img').length ===0){
 							$("#"+cam1[1]).fadeOut(200).fadeIn(200);
 							$("#"+cam1[1]).unbind('click')
@@ -1203,7 +1212,8 @@ var show1 = function(a,b,c,g){
 						i++
 						ra.push(cam1[1])
 						var d = c
-						d.push(a[1])
+						if (d.indexOf(a[1]) === -1){
+							d.push(a[1])}
 						show1(trans(cam1[1]),b,d,3)
 					}
 				}
@@ -1211,6 +1221,7 @@ var show1 = function(a,b,c,g){
 					if ($("#"+a[2]).find('#coin1').length === 1||$("#"+a[2]).find('#coin4').length === 1){
 						var cami1 = trans(a[2])
 						var m = i+1
+						i=0
 						if ($("#"+cami1[2]).find('img').length ===0){
 							$("#"+cami1[2]).fadeOut(200).fadeIn(200);
 							$("#"+cami1[2]).unbind('click')
@@ -1252,7 +1263,8 @@ var show1 = function(a,b,c,g){
 						i++
 						ra.push(cami1[2])
 						var d = c
-						d.push(a[2])
+						if (d.indexOf(a[2]) === -1){
+							d.push(a[2])}
 						show1(trans(cami1[2]),b,d,4)
 					}
 				}
@@ -1260,6 +1272,7 @@ var show1 = function(a,b,c,g){
 					if ($("#"+a[a.length-1]).find('#coin1').length === 1||$("#"+a[a.length-1]).find('#coin4').length === 1){
 						var camo1 = trans(a[a.length-1])
 						var m = i+1
+						i=0
 						if ($("#"+camo1[camo1.length-1]).find('img').length ===0){
 							$("#"+camo1[camo1.length-1]).fadeOut(200).fadeIn(200);
 							$("#"+camo1[camo1.length-1]).unbind('click')
@@ -1301,7 +1314,8 @@ var show1 = function(a,b,c,g){
 						i++
 						ra.push(camo1[camo1.length-1])
 						var d = c
-						d.push(a[a.length-1])
+						if (d.indexOf(a[a.length-1]) === -1){
+							d.push(a[a.length-1])}
 						show1(trans(camo1[camo1.length-1]),b,d,1)
 					}
 				}
@@ -1309,6 +1323,7 @@ var show1 = function(a,b,c,g){
 					if ($("#"+a[a.length-2]).find('#coin1').length === 1||$("#"+a[a.length-2]).find('#coin4').length === 1){
 						var camu1 = trans(a[a.length-2])
 						var m = i+1
+						i=0
 						if ($("#"+camu1[camu1.length-2]).find('img').length ===0){
 							$("#"+camu1[camu1.length-2]).fadeOut(200).fadeIn(200);
 							$("#"+camu1[camu1.length-2]).unbind('click')
@@ -1350,7 +1365,8 @@ var show1 = function(a,b,c,g){
 						i++
 						ra.push(camu1[camu1.length-2])
 						var d = c
-						d.push(a[a.length-2])
+						if (d.indexOf(a[a.length-2]) === -1){
+							d.push(a[a.length-2])}
 						show1(trans(camu1[camu1.length-2]),b,d,2)
 					}
 				}
@@ -1362,6 +1378,7 @@ var show1 = function(a,b,c,g){
 					if ($("#"+a[1]).find('#coin').length === 1||$("#"+a[1]).find('#coin3').length === 1){
 						var cam2 = trans(a[1])
 						var m = i+1
+						i=0
 						if ($("#"+cam2[1]).find('img').length ===0){
 							$("#"+cam2[1]).fadeOut(200).fadeIn(200);
 							$("#"+cam2[1]).unbind('click')
@@ -1403,7 +1420,8 @@ var show1 = function(a,b,c,g){
 						i++
 						ra.push(cam2[1])
 						var d = c
-						d.push(a[1])
+						if (d.indexOf(a[1]) === -1){
+							d.push(a[1])}
 						show1(trans(cam2[1]),b,d,3)
 					}
 				}
@@ -1411,6 +1429,7 @@ var show1 = function(a,b,c,g){
 					if ($("#"+a[2]).find('#coin').length === 1||$("#"+a[2]).find('#coin3').length === 1){
 						var cami2 = trans(a[2])
 						var m = i+1
+						i=0
 						if ($("#"+cami2[2]).find('img').length ===0){
 							$("#"+cami2[2]).fadeOut(200).fadeIn(200);
 							$("#"+cami2[2]).unbind('click')
@@ -1452,7 +1471,8 @@ var show1 = function(a,b,c,g){
 						i++
 						ra.push(cami2[2])
 						var d = c
-						d.push(a[2])
+						if (d.indexOf(a[2]) === -1){
+							d.push(a[2])}
 						show1(trans(cami2[2]),b,d,4)
 					}
 				}
@@ -1460,6 +1480,7 @@ var show1 = function(a,b,c,g){
 					if ($("#"+a[a.length-1]).find('#coin').length === 1||$("#"+a[a.length-1]).find('#coin3').length === 1){
 						var camo2 = trans(a[a.length-1])
 						var m = i+1
+						i=0
 						if ($("#"+camo2[camo2.length-1]).find('img').length ===0){
 							$("#"+camo2[camo2.length-1]).fadeOut(200).fadeIn(200);
 							$("#"+camo2[camo2.length-1]).unbind('click')
@@ -1501,7 +1522,8 @@ var show1 = function(a,b,c,g){
 						i++
 						ra.push(camo2[camo2.length-1])
 						var d = c
-						d.push(a[a.length-1])
+						if (d.indexOf(a[a.length-1]) === -1){
+							d.push(a[a.length-1])}
 						show1(trans(camo2[camo2.length-1]),b,d,1)
 					}
 				}
@@ -1509,6 +1531,7 @@ var show1 = function(a,b,c,g){
 					if ($("#"+a[a.length-2]).find('#coin').length === 1||$("#"+a[a.length-2]).find('#coin3').length === 1){
 						var camu2 = trans(a[a.length-2])
 						var m = i+1
+						i=0
 						if ($("#"+camu2[camu2.length-2]).find('img').length ===0){
 							$("#"+camu2[camu2.length-2]).fadeOut(200).fadeIn(200);
 							$("#"+camu2[camu2.length-2]).unbind('click')
@@ -1550,7 +1573,8 @@ var show1 = function(a,b,c,g){
 						i++
 						ra.push(camu2[camu2.length-2])
 						var d = c
-						d.push(a[a.length-2])
+						if (d.indexOf(a[a.length-2]) === -1){
+							d.push(a[a.length-2])}
 						show1(trans(camu2[camu2.length-2]),b,d,2)
 					}
 				}
