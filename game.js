@@ -5,8 +5,9 @@ var block = "<div style='display:block;  width: 80px; background: white; float:l
 var block1 = "<br><div style='display:block;  width: 80px; background: white;'>%num%</div>";
 var reset = "<button id='start' onclick='start();change1();' style='float: left; height:40; color:green;'>Reset</button>"
 var play = '<button id="start" onclick="start();change();" style="float: left; height:40; color:green;">Play</button>'
-var tur1 = "<div style='font-size:5ex;width:160px;float:left;'>Turn:</div>"
-var tur = "<div id='turn' style='width: 160px;background:black; height: 44px; border: 1px solid;float: left'></div>"
+var changetur = '<button id="changetur" onclick="changeTurn();" style="float: left; height:40; color:green;">ChangeTurn</button>'
+var tur1 = "<div style='font-size:5ex;width:120px;float:left;'>Turn:</div>"
+var tur = "<div id='turn' style='width: 100px;background:black; height: 44px; border: 1px solid;float: left'></div>"
 var scoreb = "<div id='scoreb' style='width: 130px; height: 44px; border: 1px solid;float: left'>Blue<br>%num%</div>"
 var scorey = "<div id='scorey' style='width: 130px; height: 44px; border: 1px solid;float: left'>Yellow<br>%num%</div>"
 var bluescore = 0
@@ -60,6 +61,7 @@ var squares = function(){
 //white = white.replace('%nam%',name[n])
 
 squares();
+$('#main').append(changetur)
 $('#main').append(play)
 
 var nums = function(){
@@ -1629,4 +1631,19 @@ var test1 = function(){
 	$('#C4').append(new Player1());
 	$('#C2').append(new Player1());
 	o=0
+}
+function changeTurn(){
+	if (o === 1){
+		o = 0
+	}else{
+		o = 1
+	}
+	for (var z in ra){
+		$('#'+ra[z]).unbind('click')
+	}
+	ra = []
+	for (var e in r){
+		r[e].unbind('click')
+	}
+	r = []
 }
